@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #1a1a2e;
+  --accent: #0ea5e9;
+}

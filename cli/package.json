@@ -1,0 +1,17 @@
+{
+  "name": "webexpress-cli",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "we": "./index.js"
+  },
+  "scripts": {
+    "generate": "node index.js generate",
+    "deploy": "node index.js deploy",
+    "list": "node index.js list"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.0"
+  }
+}
