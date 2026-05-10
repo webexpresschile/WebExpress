@@ -1,0 +1,35 @@
+---
+export interface Props {
+  address: string;
+  mapsLink: string;
+}
+const { address, mapsLink } = Astro.props;
+---
+<section id="ubicacion" class="py-20 md:py-28 bg-gray-50">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-4">Ubicación</h2>
+    <div class="w-16 h-1 mx-auto mb-12 rounded" style="background-color: var(--secondary)" />
+
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h3 class="text-xl font-bold mb-2">Visítanos</h3>
+        <p class="text-gray-600 mb-4">{address}</p>
+        <div class="flex gap-3">
+          <a href={mapsLink} target="_blank" class="px-5 py-2.5 rounded-lg text-white font-medium text-sm transition-all hover:scale-105" style="background-color: var(--primary)">
+            Google Maps
+          </a>
+          <a href={`https://waze.com/ul?q=${encodeURIComponent(address)}`} target="_blank" class="px-5 py-2.5 rounded-lg border-2 font-medium text-sm transition-all hover:scale-105" style="border-color: var(--primary); color: var(--primary)">
+            Waze
+          </a>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-sm h-[300px] bg-gray-200 flex items-center justify-center">
+        <iframe
+          src={`https://maps.google.com/maps?q=${encodeURIComponent(address)}&output=embed`}
+          width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>

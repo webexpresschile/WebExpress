@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Menu from '../components/Menu.astro';
+import Schedule from '../components/Schedule.astro';
+import Location from '../components/Location.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+
+const content = await import('../data/content.json');
+const { business, menu, testimonials, gallery, seo } = content;
+---
+
+<Base title={seo.title} description={seo.description}>
+  <Hero business={business} />
+  <Menu menu={menu} />
+  <Schedule hours={business.hours} phone={business.phone} />
+  <Location address={business.address} mapsLink={business.google_maps_link} />
+  <Testimonials testimonials={testimonials} />
+  <Contact business={business} />
+  <Footer business={business} />
+  <WhatsAppFloat phone={business.phone} message={business.whatsapp_message} />
+</Base>

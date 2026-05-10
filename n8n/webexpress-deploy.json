@@ -1,0 +1,104 @@
+[
+  {
+    "id": "webexpress-deploy",
+    "name": "WebExpress - Deploy Site",
+    "nodes": [
+      {
+        "id": "webhook",
+        "name": "Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "parameters": {
+          "path": "webexpress-deploy",
+          "options": {}
+        },
+        "position": [0, 300]
+      },
+      {
+        "id": "http-request",
+        "name": "Get Content",
+        "type": "n8n-nodes-base.httpRequest",
+        "parameters": {
+          "url": "={{ $env.SUPABASE_URL }}/rest/v1/rpc/get_client_content",
+          "options": {
+            "headers": {
+              "apikey": "={{ $env.SUPABASE_ANON_KEY }}",
+              "Authorization": "Bearer {{ $env.SUPABASE_SERVICE_ROLE_KEY }}"
+            }
+          }
+        },
+        "position": [300, 300]
+      },
+      {
+        "id": "set",
+        "name": "Build Content JSON",
+        "type": "n8n-nodes-base.set",
+        "parameters": {
+          "values": {
+            "string": [
+              {
+                "name": "content_json",
+                "value": "={{ JSON.stringify($node['Get Content'].json) }}"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "position": [600, 300]
+      },
+      {
+        "id": "github",
+        "name": "GitHub: Commit & Push",
+        "type": "n8n-nodes-base.github",
+        "parameters": {
+          "operation": "createOrUpdateFile",
+          "repositoryOwner": "webexpresschile",
+          "repositoryName": "={{ $json.client_id }}",
+          "path": "src/data/content.json",
+          "content": "={{ $json.content_json }}",
+          "message": "chore: update site content [webexpress]",
+          "options": {
+            "branch": "main"
+          }
+        },
+        "position": [900, 300]
+      },
+      {
+        "id": "github-actions",
+        "name": "Trigger GitHub Actions",
+        "type": "n8n-nodes-base.httpRequest",
+        "parameters": {
+          "url": "https://api.github.com/repos/webexpresschile/{{ $json.client_id }}/dispatches",
+          "method": "POST",
+          "authentication": "genericCredentialType",
+          "genericAuthType": "httpHeaderAuth",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              { "name": "Authorization", "value": "Bearer {{ $env.GITHUB_TOKEN }}" },
+              { "name": "Accept", "value": "application/vnd.github.v3+json" }
+            ]
+          },
+          "sendBody": true,
+          "bodyParameters": {
+            "parameters": [
+              { "name": "event_type", "value": "deploy" }
+            ]
+          }
+        },
+        "position": [1200, 300]
+      }
+    ],
+    "connections": {
+      "Webhook": { "main": [[ { "node": "Get Content", "type": "main", "index": 0 } ]] },
+      "Get Content": { "main": [[ { "node": "Build Content JSON", "type": "main", "index": 0 } ]] },
+      "Build Content JSON": { "main": [[ { "node": "GitHub: Commit & Push", "type": "main", "index": 0 } ]] },
+      "GitHub: Commit & Push": { "main": [[ { "node": "Trigger GitHub Actions", "type": "main", "index": 0 } ]] }
+    },
+    "tags": [],
+    "settings": {
+      "saveManualExecutions": false,
+      "callerPolicy": "workflowsFromSameOwner"
+    },
+    "staticData": null
+  }
+]

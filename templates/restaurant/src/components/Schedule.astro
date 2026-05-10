@@ -1,0 +1,30 @@
+---
+export interface Props {
+  hours: Record<string, string>;
+  phone: string;
+}
+const { hours, phone } = Astro.props;
+const dayEntries = Object.entries(hours);
+---
+<section id="horario" class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-4">Horario</h2>
+    <div class="w-16 h-1 mx-auto mb-12 rounded" style="background-color: var(--secondary)" />
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden max-w-md mx-auto">
+      {dayEntries.map(([day, time], i) => (
+        <div class={`flex justify-between items-center px-6 py-4 ${i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+          <span class="font-medium">{day}</span>
+          <span class={time === 'Cerrado' ? 'text-red-500' : 'text-gray-700'}>{time}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-8">
+      <p class="text-gray-600">¿Fuera de horario? Llámanos igual</p>
+      <a href={`tel:${phone}`} class="text-lg font-bold hover:underline mt-1 inline-block" style="color: var(--secondary)">
+        {phone}
+      </a>
+    </div>
+  </div>
+</section>
