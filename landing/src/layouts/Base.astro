@@ -1,0 +1,98 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebExpress — Presencia Digital Inteligente para tu Negocio</title>
+  <meta name="description" content="Sitio web profesional + Panel de edición + Chatbot con IA + Analytics. Tu negocio merece una presencia digital de otro nivel." />
+  <meta property="og:title" content="WebExpress — Presencia Digital Inteligente" />
+  <meta property="og:description" content="Sitio web profesional + Panel de edición + Chatbot con IA. Todo lo que tu negocio necesita para brillar online." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+</head>
+<body class="font-sans bg-[#0a0a0f] text-white antialiased overflow-x-hidden">
+  <slot />
+  <script>
+    // Scroll reveal animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Anime.js hero text animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const titles = document.querySelectorAll('.hero-title');
+      titles.forEach(el => {
+        anime({
+          targets: el,
+          opacity: [0, 1],
+          translateY: [40, 0],
+          easing: 'easeOutExpo',
+          duration: 1200,
+          delay: 300,
+        });
+      });
+
+      document.querySelectorAll('.hero-sub').forEach((el, i) => {
+        anime({
+          targets: el,
+          opacity: [0, 1],
+          translateY: [20, 0],
+          easing: 'easeOutExpo',
+          duration: 800,
+          delay: 800 + i * 200,
+        });
+      });
+
+      document.querySelectorAll('.hero-cta').forEach((el, i) => {
+        anime({
+          targets: el,
+          opacity: [0, 1],
+          scale: [0.8, 1],
+          easing: 'easeOutElastic',
+          duration: 1500,
+          delay: 1400 + i * 200,
+        });
+      });
+
+      // Floating particles
+      document.querySelectorAll('.particle').forEach((el, i) => {
+        anime({
+          targets: el,
+          translateX: () => anime.random(-200, 200),
+          translateY: () => anime.random(-200, 200),
+          scale: [0, 1, 0],
+          opacity: [0, 0.6, 0],
+          easing: 'easeInOutSine',
+          duration: () => anime.random(3000, 6000),
+          delay: i * 300,
+          loop: true,
+        });
+      });
+
+      // Count up stats
+      document.querySelectorAll('.stat-num').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        anime({
+          targets: el,
+          innerHTML: [0, target],
+          easing: 'easeOutExpo',
+          duration: 2000,
+          delay: 500,
+          round: 1,
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base>
+  <!-- PARTICLES BACKGROUND -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#1a0a2e_0%,_#0a0a0f_50%)]" />
+    {[1,2,3,4,5,6,7,8].map(i => (
+      <div class="particle absolute w-1 h-1 bg-violet-400/30 rounded-full"
+        style={`top:${10 + (i*11) % 80}%; left:${5 + (i*13) % 90}%`} />
+    ))}
+  </div>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-white/[0.06]">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-xs font-bold">W</div>
+        <span class="font-bold text-lg">WebExpress</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+        <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
+        <a href="#planes" class="hover:text-white transition-colors">Planes</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </div>
+      <a href="#cta" class="px-5 py-2 bg-white text-black rounded-full font-medium text-sm hover:bg-gray-200 transition-all">
+        Quiero mi sitio
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-violet-600/20 rounded-full blur-[120px] animate-pulse-slow" />
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-fuchsia-600/20 rounded-full blur-[150px] animate-pulse-slow" style="animation-delay: 2s" />
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[200px]" />
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 border border-violet-500/30 rounded-full text-xs text-violet-300 mb-8 hero-sub">
+        🇨🇱 Hecho en Chile para Pymes latinoamericanas
+      </div>
+
+      <h1 class="hero-title text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-6">
+        Tu negocio merece una<br/>
+        <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-blue-400 bg-clip-text text-transparent">
+          presencia digital
+        </span><br/>
+        de otro nivel
+      </h1>
+
+      <p class="hero-sub text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Sitio web profesional + Panel para que edites tú mismo + Chatbot con IA que responde 24/7 + Analytics.
+        <span class="text-white font-semibold">Todo en uno. Todo funcionando. Sin complicaciones.</span>
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 hero-cta">
+        <a href="#planes" class="px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl shadow-violet-600/30">
+          Ver Planes
+        </a>
+        <a href="#servicios" class="px-8 py-4 border border-white/20 rounded-full font-medium text-lg hover:bg-white/5 transition-all">
+          ¿Qué incluye?
+        </a>
+      </div>
+
+      <!-- STATS -->
+      <div class="hero-sub mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
+        <div>
+          <p class="stat-num text-3xl font-black text-white" data-target="15">0</p>
+          <p class="text-xs text-gray-500 mt-1">minutos en tener tu sitio</p>
+        </div>
+        <div>
+          <p class="stat-num text-3xl font-black text-white" data-target="100">0</p>
+          <p class="text-xs text-gray-500 mt-1">% personalizado</p>
+        </div>
+        <div>
+          <p class="text-3xl font-black text-white">24/7</p>
+          <p class="text-xs text-gray-500 mt-1">tu chatbot nunca duerme</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM / AGITATION -->
+  <section class="relative py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="reveal opacity-0 translate-y-8 transition-all duration-700">
+        <p class="text-violet-400 font-medium text-sm tracking-widest uppercase mb-4">El problema</p>
+        <h2 class="text-3xl md:text-4xl font-black mb-6">
+          ¿Cuántos clientes has perdido<br/>
+          <span class="text-gray-500">por no tener presencia online?</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-12">
+        {[
+          { num: '1', title: 'No te encuentran', desc: 'El 86% de las personas busca negocios en Google antes de comprar. Si no estás, no existes.' },
+          { num: '2', title: 'Pareces poco profesional', desc: 'Sin sitio web, tu negocio se ve informal. Un cliente que investiga, elige al que tiene web.' },
+          { num: '3', title: 'Pierdes ventas 24/7', desc: 'Mientras duermes, tus competidores están captando clientes. Tu sitio nunca cierra.' },
+        ].map(p => (
+          <div class="reveal opacity-0 translate-y-8 transition-all duration-700 p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-violet-500/30 group transition-all">
+            <span class="text-5xl font-black bg-gradient-to-br from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">{p.num}</span>
+            <h3 class="text-xl font-bold mt-4 mb-3">{p.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="servicios" class="relative py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
+        <p class="text-violet-400 font-medium text-sm tracking-widest uppercase mb-4">Todo incluido</p>
+        <h2 class="text-3xl md:text-4xl font-black mb-4">Tu ecosistema digital completo</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">No es solo una página web. Es un sistema que trabaja para ti las 24 horas.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          { icon: '🎨', title: 'Sitio Web Profesional', desc: 'Diseñado para tu rubro. Restaurante, clínica, servicios… Adaptado a tu negocio. Responsive, rápido y optimizado para Google.' },
+          { icon: '✏️', title: 'Panel de Edición', desc: 'Edita textos, fotos y horarios tú mismo. Sin saber de código. En 2 minutos tienes los cambios en vivo.' },
+          { icon: '🤖', title: 'Chatbot WhatsApp con IA', desc: 'Responde clientes automáticamente 24/7. Entrenado con la información de tu negocio. Capta leads mientras trabajas o duermes.' },
+          { icon: '📊', title: 'Analytics Inteligente', desc: 'Sabes cuánta gente visita tu sitio, de dónde vienen y qué ven. Datos claros para tomar mejores decisiones.' },
+          { icon: '📱', title: 'Optimizado para Móviles', desc: 'El 70% de tus clientes te verá desde el teléfono. Tu sitio se ve perfecto en cualquier pantalla.' },
+          { icon: '🔒', title: 'Hosting + Dominio', desc: 'Nosotros nos encargamos de la parte técnica. Tu sitio siempre online, rápido y seguro. Tú solo preocupate de tu negocio.' },
+        ].map((s, i) => (
+          <div class="reveal opacity-0 translate-y-8 transition-all duration-700 p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-violet-500/30 group transition-all" style={`transition-delay: ${i * 100}ms`}>
+            <span class="text-3xl">{s.icon}</span>
+            <h3 class="text-lg font-bold mt-4 mb-2">{s.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="planes" class="relative py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
+        <p class="text-violet-400 font-medium text-sm tracking-widest uppercase mb-4">Inversión única</p>
+        <h2 class="text-3xl md:text-4xl font-black mb-4">Precios claros, sin sorpresas</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">Elige el plan que mejor se adapte a tu negocio. Pagas una vez y el sitio es tuyo.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <!-- BASIC -->
+        <div class="reveal opacity-0 translate-y-8 transition-all duration-700 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 hover:border-violet-500/40 hover:bg-white/[0.04] transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-bold">Web Básica</h3>
+            <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">Para empezar</span>
+          </div>
+          <div class="mb-6">
+            <span class="text-4xl font-black">$160</span>
+            <span class="text-gray-500 text-sm ml-1">USD</span>
+            <p class="text-xs text-gray-500 mt-1">Pago único. El sitio es tuyo.</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            {[
+              'Sitio web de 1 página (Landing Page)',
+              'Diseño profesional para tu rubro',
+              'Botón WhatsApp integrado',
+              'Formulario de contacto',
+              'Hosting + dominio .cl por 1 año',
+              'Optimizado para celulares',
+              'Ediciones vía WhatsApp (tú pides, yo edito)',
+            ].map(f => (
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-violet-400 mt-0.5">✓</span>
+                <span class="text-gray-300">{f}</span>
+              </li>
+            ))}
+          </ul>
+          <a href="#cta" class="block w-full py-3.5 text-center rounded-xl border border-white/20 font-medium hover:bg-white/5 transition-all text-sm">
+            Elegir Básica
+          </a>
+        </div>
+
+        <!-- PROFESSIONAL -->
+        <div class="reveal opacity-0 translate-y-8 transition-all duration-700 rounded-2xl border border-violet-500/40 bg-gradient-to-b from-violet-600/[0.08] to-transparent p-8 relative" style="transition-delay: 150ms">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-full text-xs font-bold">
+            Más elegido
+          </div>
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-bold">Web Profesional</h3>
+            <span class="px-3 py-1 text-xs font-medium bg-violet-500/20 text-violet-300 rounded-full">Completo</span>
+          </div>
+          <div class="mb-6">
+            <span class="text-4xl font-black">$259</span>
+            <span class="text-gray-500 text-sm ml-1">USD</span>
+            <p class="text-xs text-gray-500 mt-1">Pago único. Todo incluido.</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            {[
+              'Landing Page + hasta 5 secciones',
+              'Panel de edición (editas tú mismo)',
+              'Chatbot WhatsApp con IA 24/7',
+              'Analytics (cuánta gente te visita)',
+              'Galería de imágenes',
+              'Integración Google Maps',
+              'SEO básico (apareces en Google)',
+              'Hosting + dominio .cl por 1 año',
+              'Capacitación incluida',
+            ].map(f => (
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-violet-400 mt-0.5">✓</span>
+                <span class="text-gray-300">{f}</span>
+              </li>
+            ))}
+          </ul>
+          <a href="#cta" class="block w-full py-3.5 text-center rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 font-bold hover:scale-[1.02] transition-all text-sm shadow-lg shadow-violet-600/30">
+            Elegir Profesional
+          </a>
+        </div>
+      </div>
+
+      <p class="text-center text-gray-500 text-sm mt-8 reveal opacity-0 transition-all duration-700">
+        ¿No encuentras lo que buscas? <a href="#cta" class="text-violet-400 hover:underline">Conversemos</a> y armamos algo a tu medida.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="relative py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
+        <p class="text-violet-400 font-medium text-sm tracking-widest uppercase mb-4">Cómo funciona</p>
+        <h2 class="text-3xl md:text-4xl font-black mb-4">De cero a online en 15 minutos</h2>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        {[
+          { step: '1', title: 'Conversamos', desc: 'Me cuentas de tu negocio, qué haces, qué necesitas. Sin tecnicismos.' },
+          { step: '2', title: 'Creamos', desc: 'Con IA genero tu sitio con el contenido perfecto para tu negocio.' },
+          { step: '3', title: 'Revisas', desc: 'Te paso el link. Ves cómo queda. Si algo no te gusta, lo ajustamos.' },
+          { step: '4', title: 'Publicamos', desc: 'Tu sitio en línea. Tu chatbot activo. Tu negocio abierto 24/7.' },
+        ].map((s, i) => (
+          <div class="reveal opacity-0 translate-y-8 transition-all duration-700 text-center" style={`transition-delay: ${i * 100}ms`}>
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-violet-600 to-fuchsia-600 flex items-center justify-center text-xl font-black mx-auto mb-4">{s.step}</div>
+            <h3 class="font-bold mb-2">{s.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (placeholder) -->
+  <section class="relative py-28 bg-white/[0.01] border-y border-white/[0.04]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
+        <p class="text-violet-400 font-medium text-sm tracking-widest uppercase mb-4">Resultados reales</p>
+        <h2 class="text-3xl md:text-4xl font-black mb-4">Lo que dicen nuestros clientes</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          { text: '"En dos días tenía mi sitio funcionando. El chatbot ya me tomó 3 reservas mientras dormía."', name: 'Carlos M.', role: 'Dueño de Restaurante' },
+          { text: '"Pensé que tener página web era caro y complicado. Me equivoqué. Valió cada peso."', name: 'María F.', role: 'CEO Clínica Dental' },
+          { text: '"Lo mejor es que yo mismo puedo cambiar los precios y fotos. Ya no dependo de nadie."', name: 'Pedro G.', role: 'Servicios Técnicos' },
+        ].map((t, i) => (
+          <div class="reveal opacity-0 translate-y-8 transition-all duration-700 p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02]" style={`transition-delay: ${i * 100}ms`}>
+            <div class="flex gap-1 mb-4">
+              {[1,2,3,4,5].map(() => <span class="text-yellow-500 text-sm">★</span>)}
+            </div>
+            <p class="text-gray-300 mb-6 leading-relaxed text-sm">{t.text}</p>
+            <div>
+              <p class="font-semibold text-sm">{t.name}</p>
+              <p class="text-gray-500 text-xs">{t.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="relative py-28">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
+        <p class="text-violet-400 font-medium text-sm tracking-widest uppercase mb-4">FAQ</p>
+        <h2 class="text-3xl md:text-4xl font-black mb-4">Respuestas rápidas</h2>
+      </div>
+
+      {[
+        { q: '¿Necesito saber de tecnología?', a: 'Para nada. Yo me encargo de todo. Tú solo me cuentas de tu negocio y yo construyo el sitio. Si eliges el plan Profesional, tienes un panel para editar textos y fotos tú mismo, súper intuitivo.' },
+        { q: '¿En cuánto tiempo tengo mi sitio?', a: 'Depende del plan. La Web Básica la tienes en menos de 24 horas. La Profesional, con chatbot y panel, en 2-3 días máximo.' },
+        { q: '¿Puedo cambiar cosas después?', a: 'Sí. En el plan Básico me escribes por WhatsApp y lo actualizo. En el Profesional tienes un panel donde editas tú mismo al instante.' },
+        { q: '¿El dominio es mío?', a: 'Sí. El dominio .cl es tuyo. Si quieres cambiarte de proveedor después, puedes llevártelo.' },
+        { q: '¿Hay pagos mensuales?', a: 'No. Pagas una vez y el sitio es tuyo. El único costo recurrente opcional es si quieres mantener el chatbot con IA activo ($9/mes).' },
+        { q: '¿Funciona para mi tipo de negocio?', a: 'Tengo plantillas para restaurantes, clínicas, servicios profesionales, tiendas… y si tu rubro no está, lo creamos desde cero para ti.' },
+      ].map((item, i) => (
+        <details class="reveal opacity-0 translate-y-8 transition-all duration-700 group border-b border-white/[0.06] py-5" style={`transition-delay: ${i * 80}ms`}>
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <h3 class="font-medium text-lg">{item.q}</h3>
+            <span class="text-violet-400 text-xl group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-gray-400 text-sm leading-relaxed pr-8">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta" class="relative py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-violet-600/10 to-fuchsia-600/10" />
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-violet-600/10 rounded-full blur-[200px]" />
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <div class="reveal opacity-0 translate-y-8 transition-all duration-700">
+        <p class="text-violet-400 font-medium text-sm tracking-widest uppercase mb-4">¿Listo para despegar?</p>
+        <h2 class="text-3xl md:text-5xl font-black mb-6 leading-tight">
+          Tu negocio merece estar<br/>
+          <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            al nivel que tú sueñas
+          </span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-lg mx-auto mb-10">
+          Agenda una llamada de 15 minutos. Sin compromiso. Te muestro ejemplos reales y te cuento cómo sería tu sitio.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://wa.me/569XXXXXXXX?text=Hola%20WebExpress!%20Quiero%20mi%20sitio%20web" target="_blank"
+            class="px-10 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-2xl shadow-violet-600/40 inline-flex items-center gap-3">
+            <span>💬</span>
+            Hablar por WhatsApp
+          </a>
+          <a href="mailto:hola@webexpress.cl"
+            class="px-10 py-4 border border-white/20 rounded-full font-medium text-lg hover:bg-white/5 transition-all">
+            ✉️ hola@webexpress.cl
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/[0.06] py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2 text-sm text-gray-500">
+        <div class="w-6 h-6 rounded bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-[10px] font-bold">W</div>
+        <span>WebExpress.cl — Hecho en Chile 🇨🇱</span>
+      </div>
+      <div class="flex gap-6 text-sm text-gray-500">
+        <span>© {new Date().getFullYear()} WebExpress</span>
+        <a href="mailto:hola@webexpress.cl" class="hover:text-white transition-colors">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .reveal.visible { opacity: 1 !important; transform: translateY(0) !important; }
+    details[open] summary { margin-bottom: 0; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0f; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #555; }
+  </style>
+</Base>
