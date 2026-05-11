@@ -1,110 +1,163 @@
 ---
 import BeamsBackground from '../components/BeamsBackground.jsx';
-import TargetCursor from '../components/TargetCursor.jsx';
 ---
+
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WebExpress — Presencia Digital Inteligente para tu Negocio</title>
+  <title>WebExpress — Presencia Digital Inteligente</title>
   <meta name="description" content="Sitio web profesional + Panel de edición + Chatbot con IA + Analytics. Tu negocio merece una presencia digital de otro nivel." />
   <meta property="og:title" content="WebExpress — Presencia Digital Inteligente" />
   <meta property="og:description" content="Sitio web profesional + Panel de edición + Chatbot con IA. Todo lo que tu negocio necesita para brillar online." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
 </head>
-<body class="font-sans bg-white text-black antialiased">
+<body style="background-color: #0f0f0f; color: #ffffff;" class="font-sans antialiased">
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+  <nav style="background-color: rgba(15,15,15,0.85); border-bottom: 1px solid #222222;" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 bg-yellow-300 flex items-center justify-center text-black text-xs font-black">W</div>
-        <span class="font-bold text-lg text-white">WebExpress</span>
+        <div style="background-color: #0007cd;" class="w-8 h-8 rounded-[8px] flex items-center justify-center text-white text-xs font-semibold">W</div>
+        <span class="font-semibold text-base" style="color: #ffffff;">WebExpress</span>
       </div>
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#servicios" class="text-gray-400 hover:text-yellow-300 transition-colors">Servicios</a>
-        <a href="#planes" class="text-gray-400 hover:text-yellow-300 transition-colors">Planes</a>
-        <a href="#faq" class="text-gray-400 hover:text-yellow-300 transition-colors">FAQ</a>
+      <div class="hidden md:flex items-center gap-8 text-sm" style="color: #888888;">
+        <a href="#servicios" class="hover:text-white transition-colors" style="font-weight: 500;">Servicios</a>
+        <a href="#planes" class="hover:text-white transition-colors" style="font-weight: 500;">Planes</a>
+        <a href="#faq" class="hover:text-white transition-colors" style="font-weight: 500;">FAQ</a>
       </div>
-      <a href="#cta" class="cursor-target px-5 py-2 bg-yellow-300 text-black font-bold text-sm border-2 border-white hover:bg-yellow-400 transition-all">
+      <a href="#cta" style="background-color: #0007cd; border-radius: 8px;" class="px-5 py-2.5 text-white font-medium text-sm hover:opacity-90 transition-all">
         Quiero mi sitio
       </a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center pt-14 border-b-2 border-black overflow-hidden bg-black">
-    <div class="absolute inset-0 z-0">
+  <section class="relative min-h-screen flex items-center pt-16 overflow-hidden" style="background-color: #0f0f0f;">
+    <!-- Spotlight glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none" style="background: radial-gradient(circle at center, rgba(0,7,205,0.25) 0%, rgba(0,7,205,0.08) 30%, transparent 60%);"></div>
+    
+    <div class="absolute inset-0 z-0 opacity-30">
       <BeamsBackground client:only="react" />
-  <TargetCursor client:only="react" />
     </div>
-    <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 w-full">
-      <div class="max-w-4xl">
-        <p class="hero-el font-mono text-xs tracking-[0.2em] uppercase mb-6 text-gray-500">Hecho en Chile</p>
 
-        <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-8 text-white">
-          Tu negocio merece<br/>
-          una <em class="text-yellow-300 not-italic">presencia digital</em><br/>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 w-full">
+      <div class="max-w-3xl mx-auto text-center">
+        <div style="background-color: rgba(0,7,205,0.12); border: 1px solid rgba(0,7,205,0.2); border-radius: 8px;" class="inline-flex items-center gap-2 px-4 py-1.5 text-xs mb-8" style="color: #a8a8a8;">
+          <span style="width: 6px; height: 6px; background: #33d17a; border-radius: 50%; display: inline-block;"></span>
+          Hecho en Chile — disponible ahora
+        </div>
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] mb-6" style="color: #ffffff;">
+          Tu negocio merece una<br/>
+          <span style="color: #0007cd;">presencia digital</span><br/>
           de otro nivel.
         </h1>
 
-        <p class="hero-sub text-lg md:text-xl max-w-xl mb-10 leading-relaxed text-gray-400">
+        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" style="color: #a8a8a8;">
           Sitio web profesional + Panel para que edites tu mismo + Chatbot con IA que responde 24/7 + Analytics.
-          <strong class="text-white">Todo en uno. Sin complicaciones.</strong>
+          <strong style="color: #ffffff;">Todo en uno. Sin complicaciones.</strong>
         </p>
 
-        <div class="flex flex-col sm:flex-row items-start gap-4">
-          <a href="#planes" class="cursor-target hero-cta px-8 py-4 bg-yellow-300 text-black font-bold text-lg border-2 border-white hover:bg-yellow-400 transition-all">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#planes" style="background-color: #0007cd; border-radius: 8px;" class="px-8 py-3.5 text-white font-medium text-base hover:opacity-90 transition-all">
             Ver Planes
           </a>
-          <a href="#servicios" class="cursor-target hero-cta px-8 py-4 border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-black transition-all">
+          <a href="#servicios" style="border: 1px solid #333333; border-radius: 8px; background-color: #222222;" class="px-8 py-3.5 font-medium text-base hover:bg-[#2a2a2a] transition-all" style="color: #ffffff;">
             Que incluye
           </a>
         </div>
 
-        <div class="hero-sub mt-16 grid grid-cols-3 gap-12 max-w-lg">
-          <div>
-            <p class="stat-num text-5xl font-black text-white" data-target="15">0</p>
-            <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Minutos en tenerlo</p>
+        <!-- Terminal mockup: 2×2 grid -->
+        <div class="mt-20 max-w-3xl mx-auto">
+          <div class="grid grid-cols-2 gap-px overflow-hidden rounded-[12px]" style="background-color: #000000; border: 1px solid #222222;">
+            <div style="background-color: #181818;" class="p-5 text-left">
+              <div class="flex gap-1.5 mb-3">
+                <span style="width: 8px; height: 8px; background: #ff4d4d; border-radius: 50%; display: inline-block;"></span>
+                <span style="width: 8px; height: 8px; background: #ffd700; border-radius: 50%; display: inline-block;"></span>
+                <span style="width: 8px; height: 8px; background: #33d17a; border-radius: 50%; display: inline-block;"></span>
+              </div>
+              <p style="color: #888888; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.8;">
+                <span style="color: #00d4ff;">$</span> npx webexpress create<br/>
+                <span style="color: #33d17a;">✓</span> Sitio generado en 15s<br/>
+                <span style="color: #a8a8a8;">→</span> <span style="color: #0007cd;">https://tusitio.cl</span>
+              </p>
+            </div>
+            <div style="background-color: #181818;" class="p-5 text-left">
+              <div class="flex gap-1.5 mb-3">
+                <span style="width: 8px; height: 8px; background: #ff4d4d; border-radius: 50%; display: inline-block;"></span>
+                <span style="width: 8px; height: 8px; background: #ffd700; border-radius: 50%; display: inline-block;"></span>
+                <span style="width: 8px; height: 8px; background: #33d17a; border-radius: 50%; display: inline-block;"></span>
+              </div>
+              <p style="color: #888888; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.8;">
+                <span style="color: #00d4ff;">$</span> panel: tusitio.cl/admin<br/>
+                <span style="color: #33d17a;">✓</span> Editas tu contenido<br/>
+                <span style="color: #a8a8a8;">→</span> Cambios en vivo
+              </p>
+            </div>
+            <div style="background-color: #181818;" class="p-5 text-left">
+              <div class="flex gap-1.5 mb-3">
+                <span style="width: 8px; height: 8px; background: #ff4d4d; border-radius: 50%; display: inline-block;"></span>
+                <span style="width: 8px; height: 8px; background: #ffd700; border-radius: 50%; display: inline-block;"></span>
+                <span style="width: 8px; height: 8px; background: #33d17a; border-radius: 50%; display: inline-block;"></span>
+              </div>
+              <p style="color: #888888; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.8;">
+                <span style="color: #00d4ff;">$</span> Chatbot activo 24/7<br/>
+                <span style="color: #33d17a;">✓</span> WhatsApp integrado<br/>
+                <span style="color: #a8a8a8;">→</span> <span style="color: #33d17a;">12 leads</span> esta semana
+              </p>
+            </div>
+            <div style="background-color: #181818;" class="p-5 text-left">
+              <div class="flex gap-1.5 mb-3">
+                <span style="width: 8px; height: 8px; background: #ff4d4d; border-radius: 50%; display: inline-block;"></span>
+                <span style="width: 8px; height: 8px; background: #ffd700; border-radius: 50%; display: inline-block;"></span>
+                <span style="width: 8px; height: 8px; background: #33d17a; border-radius: 50%; display: inline-block;"></span>
+              </div>
+              <p style="color: #888888; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.8;">
+                <span style="color: #00d4ff;">$</span> Analytics<br/>
+                <span style="color: #33d17a;">✓</span> 342 visitas este mes<br/>
+                <span style="color: #a8a8a8;">→</span> 68% desde celular
+              </p>
+            </div>
           </div>
-          <div>
-            <p class="stat-num text-5xl font-black text-white" data-target="100">0</p>
-            <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Porciento Personalizado</p>
-          </div>
-          <div>
-            <p class="text-5xl font-black text-white">24/7</p>
-            <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Chatbot activo</p>
-          </div>
+        </div>
+
+        <div class="mt-8 flex items-center justify-center gap-8 text-xs" style="color: #666666;">
+          <span>15 min de configuracion</span>
+          <span style="width: 3px; height: 3px; background: #444444; border-radius: 50%; display: inline-block;"></span>
+          <span>Sin tecnicismos</span>
+          <span style="width: 3px; height: 3px; background: #444444; border-radius: 50%; display: inline-block;"></span>
+          <span>100% personalizado</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PROBLEM -->
-  <section class="border-b-2 border-black">
-    <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
-      <div class="reveal">
-        <p class="font-mono text-xs tracking-[0.2em] uppercase mb-4 text-gray-400">El problema</p>
-        <h2 class="text-3xl md:text-5xl font-black leading-tight mb-16 max-w-3xl">
+  <section style="border-top: 1px solid #222222; background-color: #0f0f0f;">
+    <div class="max-w-6xl mx-auto px-6 py-24" style="padding-top: 96px; padding-bottom: 96px;">
+      <div class="text-center mb-20 reveal">
+        <p class="text-xs mb-4" style="color: #888888; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">El problema</p>
+        <h2 class="text-3xl md:text-5xl font-semibold leading-tight max-w-2xl mx-auto" style="color: #ffffff;">
           Cuantos clientes has perdido<br/>
-          <span class="text-gray-300">por no tener presencia online?</span>
+          <span style="color: #666666;">por no tener presencia online?</span>
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-0 border-t-2 border-black">
+      <div class="grid md:grid-cols-3 gap-4">
         {[
-          { num: '01', title: 'No te encuentran', desc: 'El 86% de las personas busca negocios en Google antes de comprar. Si no estas, no existes.' },
-          { num: '02', title: 'Pareces poco profesional', desc: 'Sin sitio web, tu negocio se ve informal. Un cliente que investiga, elige al que tiene web.' },
-          { num: '03', title: 'Pierdes ventas 24/7', desc: 'Mientras duermes, tus competidores estan captando clientes. Tu sitio nunca cierra.' },
+          { num: '01', title: 'No te encuentran', desc: 'El 86% de las personas busca negocios en Google antes de comprar. Si no estas, no existes.', icon: '🔍' },
+          { num: '02', title: 'Pareces poco profesional', desc: 'Sin sitio web, tu negocio se ve informal. Un cliente que investiga, elige al que tiene web.', icon: '📱' },
+          { num: '03', title: 'Pierdes ventas 24/7', desc: 'Mientras duermes, tus competidores estan captando clientes. Tu sitio nunca cierra.', icon: '⏰' },
         ].map(p => (
-          <div class="reveal border-r-2 border-black last:border-r-0 p-8 md:p-10">
-            <span class="text-6xl md:text-7xl font-black text-yellow-300 block mb-6">{p.num}</span>
-            <h3 class="text-xl font-bold mb-3">{p.title}</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
+          <div class="reveal p-8 rounded-[8px]" style="background-color: #181818; border: 1px solid #222222;">
+            <span style="color: #0007cd; font-size: 48px; font-weight: 700; line-height: 1;" class="block mb-4">{p.num}</span>
+            <h3 class="text-lg font-semibold mb-3" style="color: #ffffff;">{p.title}</h3>
+            <p class="text-sm leading-relaxed" style="color: #a8a8a8;">{p.desc}</p>
           </div>
         ))}
       </div>
@@ -112,37 +165,40 @@ import TargetCursor from '../components/TargetCursor.jsx';
   </section>
 
   <!-- BIG STATEMENT -->
-  <section class="border-b-2 border-black bg-yellow-300">
-    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
-      <p class="reveal text-3xl md:text-4xl lg:text-5xl font-black leading-tight max-w-4xl">
+  <section style="border-top: 1px solid #222222; background-color: #0007cd;">
+    <div class="max-w-5xl mx-auto px-6 py-20" style="padding-top: 80px; padding-bottom: 80px;">
+      <p class="reveal text-2xl md:text-4xl font-semibold leading-tight max-w-3xl text-center mx-auto" style="color: #ffffff;">
         No es solo una pagina web. Es un sistema que trabaja para ti 
-        <em class="text-black not-italic border-b-4 border-black">las 24 horas del dia.</em>
+        <em style="color: rgba(255,255,255,0.7); font-style: normal;">las 24 horas del dia.</em>
       </p>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="servicios" class="border-b-2 border-black">
-    <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
-      <div class="text-left mb-16 reveal">
-        <p class="font-mono text-xs tracking-[0.2em] uppercase mb-4 text-gray-400">Todo incluido</p>
-        <h2 class="text-3xl md:text-5xl font-black max-w-xl leading-tight">
+  <section id="servicios" style="border-top: 1px solid #222222; background-color: #0f0f0f;">
+    <div class="max-w-6xl mx-auto px-6 py-24" style="padding-top: 96px; padding-bottom: 96px;">
+      <div class="text-center mb-20 reveal">
+        <p class="text-xs mb-4" style="color: #888888; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">Todo incluido</p>
+        <h2 class="text-3xl md:text-5xl font-semibold max-w-xl mx-auto leading-tight" style="color: #ffffff;">
           Tu ecosistema digital<br/>completo.
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-2 border-t-2 border-black">
+      <div class="grid md:grid-cols-3 gap-4">
         {[
-          { title: 'Sitio Web Profesional', desc: 'Disenado para tu rubro. Restaurante, clinica, servicios. Adaptado a tu negocio. Responsive, rapido y optimizado para Google.' },
-          { title: 'Panel de Edicion', desc: 'Edita textos, fotos y horarios tu mismo. Sin saber de codigo. En 2 minutos tienes los cambios en vivo.' },
-          { title: 'Chatbot WhatsApp con IA', desc: 'Responde clientes automaticamente 24/7. Entrenado con la informacion de tu negocio. Capta leads mientras trabajas o duermes.' },
-          { title: 'Analytics Inteligente', desc: 'Sabes cuanta gente visita tu sitio, de donde vienen y que ven. Datos claros para tomar mejores decisiones.' },
-          { title: 'Optimizado para Moviles', desc: 'El 70% de tus clientes te vera desde el telefono. Tu sitio se ve perfecto en cualquier pantalla.' },
-          { title: 'Hosting + Dominio', desc: 'Nosotros nos encargamos de la parte tecnica. Tu sitio siempre online, rapido y seguro. Tu solo preocupate de tu negocio.' },
+          { title: 'Sitio Web Profesional', desc: 'Disenado para tu rubro. Restaurante, clinica, servicios. Responsive, rapido y optimizado para Google.', icon: 'W' },
+          { title: 'Panel de Edicion', desc: 'Edita textos, fotos y horarios tu mismo. Sin saber de codigo. En 2 minutos tienes los cambios en vivo.', icon: 'E' },
+          { title: 'Chatbot WhatsApp con IA', desc: 'Responde clientes automaticamente 24/7. Entrenado con la informacion de tu negocio. Capta leads mientras trabajas.', icon: 'C' },
+          { title: 'Analytics Inteligente', desc: 'Sabes cuanta gente visita tu sitio, de donde vienen y que ven. Datos claros para tomar mejores decisiones.', icon: 'A' },
+          { title: 'Optimizado para Moviles', desc: 'El 70% de tus clientes te vera desde el telefono. Tu sitio se ve perfecto en cualquier pantalla.', icon: 'M' },
+          { title: 'Hosting + Dominio', desc: 'Nosotros nos encargamos de la parte tecnica. Tu sitio siempre online, rapido y seguro.', icon: 'H' },
         ].map((s, i) => (
-          <div class="reveal p-8 md:p-10 border-b-2 border-black md:even:border-l-2 md:even:border-l-black md:[&:nth-last-child(-n+2)]:border-b-0">
-            <h3 class="text-lg font-bold mb-2">{s.title}</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+          <div class="reveal p-8 rounded-[8px]" style="background-color: #181818; border: 1px solid #222222;">
+            <div style="background-color: rgba(0,7,205,0.12); border: 1px solid rgba(0,7,205,0.2); border-radius: 8px;" class="w-10 h-10 flex items-center justify-center mb-4 text-sm font-semibold" style="color: #0007cd;">
+              {s.icon}
+            </div>
+            <h3 class="text-base font-semibold mb-2" style="color: #ffffff;">{s.title}</h3>
+            <p class="text-sm leading-relaxed" style="color: #a8a8a8;">{s.desc}</p>
           </div>
         ))}
       </div>
@@ -150,31 +206,31 @@ import TargetCursor from '../components/TargetCursor.jsx';
   </section>
 
   <!-- PRICING -->
-  <section id="planes" class="border-b-2 border-black">
-    <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
-      <div class="text-left mb-16 reveal">
-        <p class="font-mono text-xs tracking-[0.2em] uppercase mb-4 text-gray-400">Inversion unica</p>
-        <h2 class="text-3xl md:text-5xl font-black max-w-2xl leading-tight">
+  <section id="planes" style="border-top: 1px solid #222222; background-color: #0f0f0f;">
+    <div class="max-w-6xl mx-auto px-6 py-24" style="padding-top: 96px; padding-bottom: 96px;">
+      <div class="text-center mb-20 reveal">
+        <p class="text-xs mb-4" style="color: #888888; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">Inversion unica</p>
+        <h2 class="text-3xl md:text-5xl font-semibold max-w-2xl mx-auto leading-tight" style="color: #ffffff;">
           Precios claros,<br/>
-          <span class="text-yellow-500">sin sorpresas.</span>
+          <span style="color: #0007cd;">sin sorpresas.</span>
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-0 max-w-4xl border-2 border-black">
-        <div class="p-8 md:p-10 border-r-2 border-black md:border-r-2">
-          <div class="flex items-center justify-between mb-8">
-            <h3 class="text-2xl font-black">Web Basica</h3>
-            <span class="px-3 py-1 text-xs font-bold bg-gray-100 border border-gray-300">Para empezar</span>
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div class="p-8 rounded-[8px]" style="background-color: #181818; border: 1px solid #222222;">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-semibold" style="color: #ffffff;">Web Basica</h3>
+            <span style="background-color: #222222; color: #888888; border-radius: 6px; padding: 4px 10px; font-size: 11px; font-weight: 500;">Para empezar</span>
           </div>
-          <div class="mb-8">
-            <span class="text-6xl font-black">$160</span>
-            <span class="text-gray-400 text-sm ml-1">USD</span>
-            <p class="text-xs text-gray-500 mt-2">Pago unico. El sitio es tuyo.</p>
+          <div class="mb-6">
+            <span class="text-5xl font-semibold" style="color: #ffffff;">$160</span>
+            <span style="color: #666666;" class="text-sm ml-1">USD</span>
+            <p class="text-xs mt-2" style="color: #666666;">Pago unico. El sitio es tuyo.</p>
           </div>
-          <ul class="space-y-4 mb-10">
+          <ul class="space-y-3 mb-8">
             {[
-              'Sitio web de 1 pagina (Landing Page)',
-              'Diseno profesional para tu rubro',
+              'Sitio web de 1 pagina',
+              'Diseno profesional',
               'Boton WhatsApp integrado',
               'Formulario de contacto',
               'Hosting + dominio .cl por 1 ano',
@@ -182,119 +238,118 @@ import TargetCursor from '../components/TargetCursor.jsx';
               'Ediciones via WhatsApp',
             ].map(f => (
               <li class="flex items-start gap-3 text-sm">
-                <span class="text-yellow-500 font-black mt-0.5">✓</span>
-                <span class="text-gray-700">{f}</span>
+                <span style="color: #33d17a; font-weight: 700;">✓</span>
+                <span style="color: #a8a8a8;">{f}</span>
               </li>
             ))}
           </ul>
-          <a href="#cta" class="cursor-target block w-full py-3 text-center border-2 border-black font-bold hover:bg-gray-100 transition-all text-sm">
+          <a href="#cta" style="background-color: #222222; border: 1px solid #333333; border-radius: 8px; color: #ffffff;" class="block w-full py-3 text-center font-medium text-sm hover:bg-[#2a2a2a] transition-all">
             Elegir Basica
           </a>
         </div>
 
-        <div class="p-8 md:p-10 bg-yellow-300">
-          <div class="flex items-center justify-between mb-8">
-            <h3 class="text-2xl font-black">Web Profesional</h3>
-            <span class="px-3 py-1 text-xs font-bold bg-white border border-black">Mas elegido</span>
+        <div class="p-8 rounded-[8px]" style="background-color: #0007cd;">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-semibold" style="color: #ffffff;">Web Profesional</h3>
+            <span style="background-color: rgba(255,255,255,0.15); color: #ffffff; border-radius: 6px; padding: 4px 10px; font-size: 11px; font-weight: 500;">Mas elegido</span>
           </div>
-          <div class="mb-8">
-            <span class="text-6xl font-black">$259</span>
-            <span class="text-gray-600 text-sm ml-1">USD</span>
-            <p class="text-xs text-gray-600 mt-2">Pago unico. Todo incluido.</p>
+          <div class="mb-6">
+            <span class="text-5xl font-semibold" style="color: #ffffff;">$259</span>
+            <span style="color: rgba(255,255,255,0.6);" class="text-sm ml-1">USD</span>
+            <p class="text-xs mt-2" style="color: rgba(255,255,255,0.6);">Pago unico. Todo incluido.</p>
           </div>
-          <ul class="space-y-4 mb-10">
+          <ul class="space-y-3 mb-8">
             {[
-              'Landing Page + hasta 5 secciones',
-              'Panel de edicion (editas tu mismo)',
+              'Landing + hasta 5 secciones',
+              'Panel de edicion',
               'Chatbot WhatsApp con IA 24/7',
-              'Analytics (cuanta gente te visita)',
+              'Analytics de visitas',
               'Galeria de imagenes',
-              'Integracion Google Maps',
-              'SEO basico (apareces en Google)',
+              'Google Maps integrado',
+              'SEO basico',
               'Hosting + dominio .cl por 1 ano',
               'Capacitacion incluida',
             ].map(f => (
               <li class="flex items-start gap-3 text-sm">
-                <span class="text-black font-black mt-0.5">✓</span>
-                <span class="text-gray-800">{f}</span>
+                <span style="color: #ffffff; font-weight: 700;">✓</span>
+                <span style="color: rgba(255,255,255,0.85);">{f}</span>
               </li>
             ))}
           </ul>
-          <a href="#cta" class="cursor-target block w-full py-3 text-center bg-black text-white font-bold hover:bg-gray-800 transition-all text-sm">
+          <a href="#cta" style="background-color: #222222; border-radius: 8px; color: #ffffff;" class="block w-full py-3 text-center font-medium text-sm hover:bg-[#2a2a2a] transition-all">
             Elegir Profesional
           </a>
         </div>
       </div>
 
-      <p class="text-gray-400 text-sm mt-8 reveal max-w-xl">
-        No encuentras lo que buscas? <a href="#cta" class="text-yellow-500 font-bold underline">Conversemos</a> y armamos algo a tu medida.
+      <p class="text-sm mt-10 text-center reveal" style="color: #666666;">
+        No encuentras lo que buscas? <a href="#cta" style="color: #0007cd; font-weight: 600;" class="hover:underline">Conversemos</a> y armamos algo a tu medida.
       </p>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="border-b-2 border-black">
-    <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
-      <div class="text-left mb-16 reveal">
-        <p class="font-mono text-xs tracking-[0.2em] uppercase mb-4 text-gray-400">Como funciona</p>
-        <h2 class="text-3xl md:text-5xl font-black leading-tight">
+  <section style="border-top: 1px solid #222222; background-color: #0f0f0f;">
+    <div class="max-w-6xl mx-auto px-6 py-24" style="padding-top: 96px; padding-bottom: 96px;">
+      <div class="text-center mb-20 reveal">
+        <p class="text-xs mb-4" style="color: #888888; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">Como funciona</p>
+        <h2 class="text-3xl md:text-5xl font-semibold leading-tight" style="color: #ffffff;">
           De cero a online<br/>
-          <span class="text-yellow-500">en 15 minutos.</span>
+          <span style="color: #0007cd;">en 15 minutos.</span>
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-4 border-t-2 border-black">
+      <div class="grid md:grid-cols-4 gap-4">
         {[
           { step: '1', title: 'Conversamos', desc: 'Me cuentas de tu negocio, que haces, que necesitas. Sin tecnicismos.' },
           { step: '2', title: 'Creamos', desc: 'Con IA genero tu sitio con el contenido perfecto para tu negocio.' },
           { step: '3', title: 'Revisas', desc: 'Te paso el link. Ves como queda. Si algo no te gusta, lo ajustamos.' },
           { step: '4', title: 'Publicamos', desc: 'Tu sitio en linea. Tu chatbot activo. Tu negocio abierto 24/7.' },
         ].map((s, i) => (
-          <div class="reveal p-8 md:p-10 border-r-2 border-black last:border-r-0">
-            <span class="text-6xl font-black text-yellow-300 block mb-4">{s.step}</span>
-            <h3 class="font-bold text-lg mb-2">{s.title}</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+          <div class="reveal p-8 rounded-[8px]" style="background-color: #181818; border: 1px solid #222222;">
+            <span style="color: #0007cd; font-size: 36px; font-weight: 700; line-height: 1;" class="block mb-4">{s.step}</span>
+            <h3 class="font-semibold text-base mb-2" style="color: #ffffff;">{s.title}</h3>
+            <p class="text-sm leading-relaxed" style="color: #a8a8a8;">{s.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- BIG CTA TEXT -->
-  <section class="border-b-2 border-black bg-black text-white">
-    <a href="#cta" class="cursor-target block max-w-6xl mx-auto px-6 py-20 md:py-28 group">
-      <p class="reveal text-3xl md:text-5xl lg:text-6xl font-black leading-tight max-w-3xl group-hover:text-yellow-300 transition-colors">
-        Listo para<br/>
-        <em class="text-yellow-300 not-italic group-hover:text-white transition-colors">despegar?</em>
+  <!-- BIG CTA -->
+  <section style="border-top: 1px solid #222222; background-color: #000000;">
+    <a href="#cta" class="block max-w-5xl mx-auto px-6 py-20 group text-center">
+      <p class="reveal text-3xl md:text-5xl font-semibold leading-tight group-hover:opacity-80 transition-opacity" style="color: #ffffff;">
+        Listo para <span style="color: #0007cd;">despegar</span>?
       </p>
     </a>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="border-b-2 border-black">
-    <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
-      <div class="text-left mb-16 reveal">
-        <p class="font-mono text-xs tracking-[0.2em] uppercase mb-4 text-gray-400">Resultados reales</p>
-        <h2 class="text-3xl md:text-5xl font-black leading-tight">
+  <section style="border-top: 1px solid #222222; background-color: #0f0f0f;">
+    <div class="max-w-6xl mx-auto px-6 py-24" style="padding-top: 96px; padding-bottom: 96px;">
+      <div class="text-center mb-20 reveal">
+        <p class="text-xs mb-4" style="color: #888888; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">Resultados reales</p>
+        <h2 class="text-3xl md:text-5xl font-semibold leading-tight" style="color: #ffffff;">
           Lo que dicen<br/>
-          <span class="text-yellow-500">nuestros clientes.</span>
+          <span style="color: #0007cd;">nuestros clientes.</span>
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-3 border-t-2 border-black">
+      <div class="grid md:grid-cols-3 gap-4">
         {[
           { text: '"En dos dias tenia mi sitio funcionando. El chatbot ya me tomo 3 reservas mientras dormia."', name: 'Carlos M.', role: 'Restaurante' },
           { text: '"Pense que tener pagina web era caro y complicado. Me equivoque. Valio cada peso."', name: 'Maria F.', role: 'Clinica Dental' },
           { text: '"Lo mejor es que yo mismo puedo cambiar los precios y fotos. Ya no dependo de nadie."', name: 'Pedro G.', role: 'Servicios Tecnicos' },
-        ].map((t, i) => (
-          <div class="reveal p-8 md:p-10 border-r-2 border-black last:border-r-0">
-            <div class="flex gap-1 mb-6">
-              {[1,2,3,4,5].map(() => <span class="text-yellow-400 text-xl">★</span>)}
+        ].map(t => (
+          <div class="reveal p-8 rounded-[8px]" style="background-color: #181818; border: 1px solid #222222;">
+            <div class="flex gap-1 mb-4">
+              {[1,2,3,4,5].map(() => <span style="color: #00d4ff; font-size: 16px;">★</span>)}
             </div>
-            <p class="text-gray-600 mb-8 leading-relaxed text-sm">{t.text}</p>
-            <div class="border-t-2 border-black pt-4">
-              <p class="font-bold">{t.name}</p>
-              <p class="text-gray-400 text-xs">{t.role}</p>
+            <p class="mb-6 text-sm leading-relaxed" style="color: #a8a8a8;">{t.text}</p>
+            <div style="border-top: 1px solid #222222; padding-top: 16px;">
+              <p class="text-sm font-medium" style="color: #ffffff;">{t.name}</p>
+              <p class="text-xs" style="color: #888888;">{t.role}</p>
             </div>
           </div>
         ))}
@@ -303,13 +358,13 @@ import TargetCursor from '../components/TargetCursor.jsx';
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="border-b-2 border-black">
-    <div class="max-w-3xl mx-auto px-6 py-24 md:py-32">
-      <div class="text-left mb-16 reveal">
-        <p class="font-mono text-xs tracking-[0.2em] uppercase mb-4 text-gray-400">FAQ</p>
-        <h2 class="text-3xl md:text-5xl font-black leading-tight">
+  <section id="faq" style="border-top: 1px solid #222222; background-color: #0f0f0f;">
+    <div class="max-w-3xl mx-auto px-6 py-24" style="padding-top: 96px; padding-bottom: 96px;">
+      <div class="text-center mb-16 reveal">
+        <p class="text-xs mb-4" style="color: #888888; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">FAQ</p>
+        <h2 class="text-3xl md:text-5xl font-semibold leading-tight" style="color: #ffffff;">
           Preguntas<br/>
-          <span class="text-yellow-500">frecuentes.</span>
+          <span style="color: #0007cd;">frecuentes.</span>
         </h2>
       </div>
 
@@ -321,36 +376,36 @@ import TargetCursor from '../components/TargetCursor.jsx';
         { q: 'Hay pagos mensuales?', a: 'No. Pagas una vez y el sitio es tuyo. El unico costo recurrente opcional es si quieres mantener el chatbot con IA activo ($9/mes).' },
         { q: 'Funciona para mi tipo de negocio?', a: 'Tengo plantillas para restaurantes, clinicas, servicios profesionales, tiendas. Y si tu rubro no esta, lo creamos desde cero para ti.' },
       ].map((item, i) => (
-        <details class="reveal group border-b-2 border-black last:border-b-0">
+        <details class="reveal group" style="border-bottom: 1px solid #222222;">
           <summary class="flex items-center justify-between cursor-pointer list-none py-5 pr-4">
-            <h3 class="font-bold text-lg">{item.q}</h3>
-            <span class="text-2xl font-black group-open:rotate-45 transition-transform text-yellow-500">+</span>
+            <h3 class="font-medium text-base" style="color: #ffffff;">{item.q}</h3>
+            <span class="text-lg font-medium group-open:rotate-45 transition-transform" style="color: #0007cd;">+</span>
           </summary>
-          <p class="pb-5 text-gray-500 text-sm leading-relaxed max-w-xl">{item.a}</p>
+          <p class="pb-5 text-sm leading-relaxed" style="color: #a8a8a8;">{item.a}</p>
         </details>
       ))}
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section id="cta" class="border-b-2 border-black">
-    <div class="max-w-6xl mx-auto px-6 py-24 md:py-32 text-center">
+  <section id="cta" style="border-top: 1px solid #222222; background-color: #0f0f0f;">
+    <div class="max-w-4xl mx-auto px-6 py-24 text-center" style="padding-top: 96px; padding-bottom: 96px;">
       <div class="reveal max-w-2xl mx-auto">
-        <p class="font-mono text-xs tracking-[0.2em] uppercase mb-6 text-gray-400">Listo?</p>
-        <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">
+        <p class="text-xs mb-6" style="color: #888888; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">Listo?</p>
+        <h2 class="text-3xl md:text-5xl font-semibold mb-8 leading-tight" style="color: #ffffff;">
           Hablame directo<br/>
-          <span class="text-yellow-500">por WhatsApp.</span>
+          <span style="color: #0007cd;">por WhatsApp.</span>
         </h2>
-        <p class="text-gray-500 mb-10 max-w-md mx-auto">
+        <p class="mb-10 max-w-md mx-auto text-sm" style="color: #a8a8a8;">
           Sin compromiso. Te muestro ejemplos reales de negocios como el tuyo y te cuento como seria tu sitio.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a href="https://wa.me/569XXXXXXXX?text=Hola%20WebExpress!%20Quiero%20mi%20sitio%20web" target="_blank"
-            class="cursor-target px-10 py-4 bg-yellow-300 text-black font-bold text-lg border-2 border-black hover:bg-yellow-400 transition-all">
+            style="background-color: #0007cd; border-radius: 8px;" class="px-8 py-3.5 text-white font-medium text-base hover:opacity-90 transition-all">
             Hablar por WhatsApp
           </a>
           <a href="mailto:hola@webexpress.cl"
-            class="cursor-target px-10 py-4 border-2 border-black font-bold text-lg hover:bg-gray-100 transition-all">
+            style="border: 1px solid #333333; border-radius: 8px; background-color: #222222; color: #ffffff;" class="px-8 py-3.5 font-medium text-base hover:bg-[#2a2a2a] transition-all">
             hola@webexpress.cl
           </a>
         </div>
@@ -359,23 +414,26 @@ import TargetCursor from '../components/TargetCursor.jsx';
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-black text-white">
+  <footer style="border-top: 1px solid #222222; background-color: #181818;">
     <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="flex items-center gap-3 text-sm text-gray-400">
-        <div class="w-6 h-6 bg-yellow-300 flex items-center justify-center text-black text-[10px] font-black">W</div>
+      <div class="flex items-center gap-3 text-sm" style="color: #666666;">
+        <div style="background-color: #0007cd; border-radius: 6px;" class="w-6 h-6 flex items-center justify-center text-white text-[10px] font-semibold">W</div>
         <span>WebExpress.cl — Hecho en Chile</span>
       </div>
-      <div class="flex gap-6 text-sm text-gray-400">
+      <div class="flex gap-6 text-sm" style="color: #666666;">
         <span>&copy; {new Date().getFullYear()}</span>
-        <a href="mailto:hola@webexpress.cl" class="hover:text-yellow-300 transition-colors">Contacto</a>
+        <a href="mailto:hola@webexpress.cl" class="hover:text-white transition-colors">Contacto</a>
       </div>
     </div>
   </footer>
 
   <style>
     ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #fff; }
-    ::-webkit-scrollbar-thumb { background: #000; }
+    ::-webkit-scrollbar-track { background: #0f0f0f; }
+    ::-webkit-scrollbar-thumb { background: #333333; border-radius: 8px; }
+    
+    details summary::-webkit-details-marker { display: none; }
+    details summary { -webkit-appearance: none; }
   </style>
 
   <script>
@@ -389,40 +447,11 @@ import TargetCursor from '../components/TargetCursor.jsx';
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    document.addEventListener('DOMContentLoaded', () => {
-      anime({
-        targets: '.hero-title',
-        opacity: [0, 1],
-        translateY: [40, 0],
-        easing: 'easeOutExpo',
-        duration: 1000,
-        delay: 200,
-      });
-
-      document.querySelectorAll('.hero-el, .hero-sub, .hero-cta').forEach((el, i) => {
-        anime({
-          targets: el,
-          opacity: [0, 1],
-          translateY: [15, 0],
-          easing: 'easeOutExpo',
-          duration: 600,
-          delay: 600 + i * 150,
-        });
-      });
-
-      document.querySelectorAll('.stat-num').forEach(el => {
-        const target = parseInt(el.dataset.target);
-        anime({
-          targets: el,
-          innerHTML: [0, target],
-          easing: 'easeOutExpo',
-          duration: 2000,
-          delay: 1200,
-          round: 1,
-        });
-      });
-    });
   </script>
+
+  <style>
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </body>
 </html>
