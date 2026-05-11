@@ -19,64 +19,64 @@ import TargetCursor from '../components/TargetCursor.jsx';
 <body class="font-sans bg-white text-black antialiased">
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b-2 border-black">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
     <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 bg-black flex items-center justify-center text-white text-xs font-black">W</div>
-        <span class="font-bold text-lg">WebExpress</span>
+        <div class="w-8 h-8 bg-yellow-300 flex items-center justify-center text-black text-xs font-black">W</div>
+        <span class="font-bold text-lg text-white">WebExpress</span>
       </div>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#servicios" class="hover:text-yellow-500 transition-colors">Servicios</a>
-        <a href="#planes" class="hover:text-yellow-500 transition-colors">Planes</a>
-        <a href="#faq" class="hover:text-yellow-500 transition-colors">FAQ</a>
+        <a href="#servicios" class="text-gray-400 hover:text-yellow-300 transition-colors">Servicios</a>
+        <a href="#planes" class="text-gray-400 hover:text-yellow-300 transition-colors">Planes</a>
+        <a href="#faq" class="text-gray-400 hover:text-yellow-300 transition-colors">FAQ</a>
       </div>
-      <a href="#cta" class="cursor-target px-5 py-2 bg-yellow-300 text-black font-bold text-sm border-2 border-black hover:bg-yellow-400 transition-all">
+      <a href="#cta" class="cursor-target px-5 py-2 bg-yellow-300 text-black font-bold text-sm border-2 border-white hover:bg-yellow-400 transition-all">
         Quiero mi sitio
       </a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center pt-14 border-b-2 border-black overflow-hidden">
+  <section class="relative min-h-screen flex items-center pt-14 border-b-2 border-black overflow-hidden bg-black">
     <div class="absolute inset-0 z-0">
       <BeamsBackground client:only="react" />
   <TargetCursor client:only="react" />
     </div>
     <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 w-full">
       <div class="max-w-4xl">
-        <p class="hero-el font-mono text-xs tracking-[0.2em] uppercase mb-6 text-gray-400">Hecho en Chile</p>
+        <p class="hero-el font-mono text-xs tracking-[0.2em] uppercase mb-6 text-gray-500">Hecho en Chile</p>
 
-        <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-8">
+        <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-8 text-white">
           Tu negocio merece<br/>
-          una <em class="text-yellow-500 not-italic">presencia digital</em><br/>
+          una <em class="text-yellow-300 not-italic">presencia digital</em><br/>
           de otro nivel.
         </h1>
 
-        <p class="hero-sub text-lg md:text-xl max-w-xl mb-10 leading-relaxed text-gray-600">
+        <p class="hero-sub text-lg md:text-xl max-w-xl mb-10 leading-relaxed text-gray-400">
           Sitio web profesional + Panel para que edites tu mismo + Chatbot con IA que responde 24/7 + Analytics.
-          <strong class="text-black">Todo en uno. Sin complicaciones.</strong>
+          <strong class="text-white">Todo en uno. Sin complicaciones.</strong>
         </p>
 
         <div class="flex flex-col sm:flex-row items-start gap-4">
-          <a href="#planes" class="cursor-target hero-cta px-8 py-4 bg-yellow-300 text-black font-bold text-lg border-2 border-black hover:bg-yellow-400 transition-all">
+          <a href="#planes" class="cursor-target hero-cta px-8 py-4 bg-yellow-300 text-black font-bold text-lg border-2 border-white hover:bg-yellow-400 transition-all">
             Ver Planes
           </a>
-          <a href="#servicios" class="cursor-target hero-cta px-8 py-4 border-2 border-black font-bold text-lg hover:bg-gray-100 transition-all">
+          <a href="#servicios" class="cursor-target hero-cta px-8 py-4 border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-black transition-all">
             Que incluye
           </a>
         </div>
 
         <div class="hero-sub mt-16 grid grid-cols-3 gap-12 max-w-lg">
           <div>
-            <p class="stat-num text-5xl font-black" data-target="15">0</p>
+            <p class="stat-num text-5xl font-black text-white" data-target="15">0</p>
             <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Minutos en tenerlo</p>
           </div>
           <div>
-            <p class="stat-num text-5xl font-black" data-target="100">0</p>
+            <p class="stat-num text-5xl font-black text-white" data-target="100">0</p>
             <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Porciento Personalizado</p>
           </div>
           <div>
-            <p class="text-5xl font-black">24/7</p>
+            <p class="text-5xl font-black text-white">24/7</p>
             <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Chatbot activo</p>
           </div>
         </div>

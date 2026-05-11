@@ -6,11 +6,33 @@
   height: 0;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: difference;
   transform: translate(-50%, -50%);
 }
 
-.target-cursor-dot {
+/* Light background → dark cursor */
+.target-cursor-wrapper[data-color="dark"] .target-cursor-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  background: #000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+.target-cursor-wrapper[data-color="dark"] .target-cursor-corner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #000;
+  will-change: transform;
+}
+
+/* Dark background → light cursor */
+.target-cursor-wrapper[data-color="light"] .target-cursor-dot {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -21,8 +43,7 @@
   transform: translate(-50%, -50%);
   will-change: transform;
 }
-
-.target-cursor-corner {
+.target-cursor-wrapper[data-color="light"] .target-cursor-corner {
   position: absolute;
   left: 50%;
   top: 50%;

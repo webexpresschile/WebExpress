@@ -2,6 +2,29 @@ import { useEffect, useRef, useCallback, useMemo } from 'react';
 import { gsap } from 'gsap';
 import './TargetCursor.css';
 
+// Detect if a background color is light or dark using luminance
+function getLuminance(r, g, b) {
+  return (0.299 * r + 0.587 * g + 0.114 * b) / 255
+}
+
+function isLightColor(bgColor) {
+  if (!bgColor || bgColor === 'transparent' || bgColor === 'rgba(0, 0, 0, 0)') {
+    return null // unknown, fall back to default
+  }
+  const match = bgColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/)
+  if (!match) {
+    const hex = bgColor.replace('#', '')
+    if (hex.length === 6) {
+      const r = parseInt(hex.slice(0, 2), 16)
+      const g = parseInt(hex.slice(2, 4), 16)
+      const b = parseInt(hex.slice(4, 6), 16)
+      return getLuminance(r, g, b) > 0.5
+    }
+    return null
+  }
+  return getLuminance(parseInt(match[1]), parseInt(match[2]), parseInt(match[3])) > 0.5
+}
+
 const TargetCursor = ({
  targetSelector = '.cursor-target',
  spinDuration = 2,
@@ -18,6 +41,7 @@ const TargetCursor = ({
  const targetCornerPositionsRef = useRef(null);
  const tickerFnRef = useRef(null);
  const activeStrengthRef = useRef(0);
+ const currentColorRef = useRef('light'); // 'light' or 'dark'
 
  const isMobile = useMemo(() => {
  if (typeof window === 'undefined') return false;
@@ -46,6 +70,19 @@ const TargetCursor = ({
  ease: 'power3.out'
  });
  }, []);
+
+ const setCursorColor = useCallback((target) => {
+   const bg = getComputedStyle(target).backgroundColor
+   const light = isLightColor(bg)
+   const isDark = light === null ? false : !light
+   const newColor = isDark ? 'light' : 'dark'
+
+   if (newColor === currentColorRef.current) return
+   currentColorRef.current = newColor
+
+   if (!cursorRef.current) return
+   cursorRef.current.dataset.color = newColor
+ }, [])
 
  useEffect(() => {
  if (isMobile || !cursorRef.current) return;
@@ -179,6 +216,10 @@ const TargetCursor = ({
  }
 
  activeTarget = target;
+
+ // Detect background and set cursor color
+ setCursorColor(target)
+
  const corners = Array.from(cornersRef.current);
  corners.forEach(corner => gsap.killTweensOf(corner));
 
@@ -300,7 +341,7 @@ const TargetCursor = ({
  targetCornerPositionsRef.current = null;
  activeStrengthRef.current = 0;
  };
- }, [targetSelector, spinDuration, moveCursor, constants, hideDefaultCursor, isMobile, hoverDuration, parallaxOn]);
+ }, [targetSelector, spinDuration, moveCursor, constants, hideDefaultCursor, isMobile, hoverDuration, parallaxOn, setCursorColor]);
 
  useEffect(() => {
  if (isMobile || !cursorRef.current || !spinTl.current) return;
@@ -317,7 +358,7 @@ const TargetCursor = ({
  }
 
  return (
- <div ref={cursorRef} className="target-cursor-wrapper">
+ <div ref={cursorRef} className="target-cursor-wrapper" data-color="light">
  <div ref={dotRef} className="target-cursor-dot" />
  <div className="target-cursor-corner corner-tl" />
  <div className="target-cursor-corner corner-tr" />
