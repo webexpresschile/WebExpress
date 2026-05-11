@@ -65,7 +65,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
       <div class="max-w-4xl mx-auto text-center">
 
         <!-- badge-pill: 11px 600 0.88px uppercase, #222 bg, pill radius, 4px×10px -->
-        <div style="background-color: #222222; border-radius: 9999px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase;" class="inline-flex items-center gap-2 mb-10" style="color: #a8a8a8;">
+        <div id="hero-badge" style="background-color: #222222; border-radius: 9999px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase;" class="inline-flex items-center gap-2 mb-10" style="color: #a8a8a8;">
           <span style="width: 6px; height: 6px; background: #33d17a; border-radius: 50%; display: inline-block;"></span>
           Hecho en Chile — disponible ahora
         </div>
@@ -79,13 +79,13 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
         </h1>
 
         <!-- body-md: 16px 400 1.5 -->
-        <p style="font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0;" class="max-w-2xl mx-auto mb-10" style="color: #a8a8a8;">
+        <p id="hero-subtitle" style="font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0;" class="max-w-2xl mx-auto mb-10" style="color: #a8a8a8;">
           Sitio web profesional + Panel para que edites tu mismo + Chatbot con IA que responde 24/7 + Analytics.
           <strong style="color: #ffffff; font-weight: 600;">Todo en uno. Sin complicaciones.</strong>
         </p>
 
         <!-- Buttons: button-primary + button-outline → 40px height, 8px radius, 14px/500 -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div id="hero-buttons" class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <!-- button-primary: #0007cd bg, 8px, 10px×18px, 40px -->
           <a href="#planes" style="background-color: #0007cd; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px;" class="inline-flex items-center justify-center text-white hover:opacity-90 transition-all">
             Ver Planes
@@ -98,7 +98,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
 
         <!-- terminal-mockup-grid: 16px radius container, #000 bg, 32px padding, 16px gap -->
         <!-- terminal-pane: #222 bg, 12px radius, 20px padding, 13px code -->
-        <div class="mt-20 max-w-3xl mx-auto">
+        <div id="terminal-grid" class="mt-20 max-w-3xl mx-auto">
           <div style="background-color: #000000; border: 1px solid #222222; border-radius: 16px;" class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 sm:p-8">
             <div style="background-color: #222222; border-radius: 12px;" class="p-5 text-left">
               <div class="flex gap-1.5 mb-3">
@@ -153,7 +153,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
         </div>
 
         <!-- caption: 13px 400 1.4 -->
-        <div class="mt-8 flex items-center justify-center gap-8" style="color: #666666; font-size: 13px; font-weight: 400; line-height: 1.4; letter-spacing: 0;">
+        <div id="hero-captions" class="mt-8 flex items-center justify-center gap-8" style="color: #666666; font-size: 13px; font-weight: 400; line-height: 1.4; letter-spacing: 0;">
           <span>Diseno profesional</span>
           <span style="width: 3px; height: 3px; background: #444444; border-radius: 50%; display: inline-block;"></span>
           <span>Sin tecnicismos</span>
@@ -167,7 +167,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
   <!-- PROBLEM — feature-card: #181818, 16px radius, 28px padding -->
   <section style="border-top: 1px solid #222222; background-color: #0f0f0f;">
     <div class="max-w-[1200px] mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
-      <div class="text-center mb-20 reveal">
+      <div class="text-center mb-20" data-anim="fade-up">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">El problema</p>
         <h2 class="section-heading max-w-2xl mx-auto" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Cuantos clientes has perdido<br/>
@@ -175,13 +175,13 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4" data-anim-stagger="fade-up" data-anim-delay="120">
         {[
           { num: '01', title: 'No te encuentran', desc: 'El 86% de las personas busca negocios en Google antes de comprar. Si no estas, no existes.' },
           { num: '02', title: 'Pareces poco profesional', desc: 'Sin sitio web, tu negocio se ve informal. Un cliente que investiga, elige al que tiene web.' },
           { num: '03', title: 'Pierdes ventas 24/7', desc: 'Mientras duermes, tus competidores estan captando clientes. Tu sitio nunca cierra.' },
         ].map(p => (
-          <div class="reveal" style="background-color: #181818; border: 1px solid #222222; border-radius: 16px; padding: 28px;">
+          <div data-anim="fade-up" style style="background-color: #181818; border: 1px solid #222222; border-radius: 16px; padding: 28px;">
             <span style="color: #0007cd; font-size: 36px; font-weight: 500; line-height: 1; letter-spacing: -0.015em;" class="block mb-4">{p.num}</span>
             <h3 style="font-size: 18px; font-weight: 600; line-height: 1.4; letter-spacing: 0; color: #ffffff;" class="mb-2">{p.title}</h3>
             <p style="font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0; color: #a8a8a8;">{p.desc}</p>
@@ -194,7 +194,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
   <!-- BIG STATEMENT -->
   <section style="border-top: 1px solid #222222; background-color: #0007cd;">
     <div class="max-w-[1200px] mx-auto px-6" style="padding-top: 80px; padding-bottom: 80px;">
-      <p class="reveal text-center mx-auto max-w-3xl" style="font-size: clamp(24px, 3vw, 36px); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
+      <p data-anim="scale-in" class="text-center mx-auto max-w-3xl" style="font-size: clamp(24px, 3vw, 36px); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
         No es solo una pagina web. Es un sistema que trabaja para ti 
         <em style="color: rgba(255,255,255,0.6); font-style: normal;">las 24 horas del dia.</em>
       </p>
@@ -204,14 +204,14 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
   <!-- SERVICES — feature-card: #181818, 16px radius, 28px padding -->
   <section id="servicios" style="border-top: 1px solid #222222; background-color: #0f0f0f;">
     <div class="max-w-[1200px] mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
-      <div class="text-center mb-20 reveal">
+      <div class="text-center mb-20" data-anim="fade-up">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">Todo incluido</p>
         <h2 class="section-heading max-w-xl mx-auto" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Tu ecosistema digital<br/>completo.
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-anim-stagger="fade-up" data-anim-delay="100">
         {[
           { title: 'Sitio Web Profesional', desc: 'Disenado para tu rubro. Restaurante, clinica, servicios. Responsive, rapido y optimizado para Google.' },
           { title: 'Panel de Edicion', desc: 'Edita textos, fotos y horarios tu mismo. Sin saber de codigo. En 2 minutos tienes los cambios en vivo.' },
@@ -220,7 +220,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
           { title: 'Optimizado para Moviles', desc: 'El 70% de tus clientes te vera desde el telefono. Tu sitio se ve perfecto en cualquier pantalla.' },
           { title: 'Hosting + Dominio', desc: 'Nosotros nos encargamos de la parte tecnica. Tu sitio siempre online, rapido y seguro.' },
         ].map((s, i) => (
-          <div class="reveal" style="background-color: #181818; border: 1px solid #222222; border-radius: 16px; padding: 28px;">
+          <div data-anim="fade-up" style style="background-color: #181818; border: 1px solid #222222; border-radius: 16px; padding: 28px;">
             <!-- toolkit-icon: 40px square, #222 bg, 8px radius -->
             <div style="background-color: #222222; border-radius: 8px;" class="w-10 h-10 flex items-center justify-center mb-4" style="color: #0007cd; font-size: 16px; font-weight: 500;">
               {['W','E','C','A','M','H'][i]}
@@ -236,7 +236,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
   <!-- PRICING -->
   <section id="planes" style="border-top: 1px solid #222222; background-color: #0f0f0f;">
     <div class="max-w-[1200px] mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
-      <div class="text-center mb-20 reveal">
+      <div class="text-center mb-20" data-anim="fade-up">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">Inversion unica</p>
         <h2 class="section-heading max-w-2xl mx-auto" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Precios claros,<br/>
@@ -244,7 +244,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto" data-anim-stagger="fade-up" data-anim-delay="150">
         <div style="background-color: #181818; border: 1px solid #222222; border-radius: 16px; padding: 28px;">
           <div class="flex items-center justify-between mb-6">
             <h3 style="font-size: 16px; font-weight: 600; line-height: 1.4; letter-spacing: 0; color: #ffffff;">Web Basica</h3>
@@ -313,7 +313,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
         </div>
       </div>
 
-      <p class="mt-10 text-center reveal" style="font-size: 14px; font-weight: 400; line-height: 1.5; letter-spacing: 0; color: #666666;">
+      <p class="mt-10 text-center" data-anim="fade-up" style="font-size: 14px; font-weight: 400; line-height: 1.5; letter-spacing: 0; color: #666666;">
         No encuentras lo que buscas? <a href="#cta" style="color: #0007cd; font-weight: 500;" class="hover:underline">Conversemos</a> y armamos algo a tu medida.
       </p>
     </div>
@@ -322,7 +322,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
   <!-- HOW IT WORKS — feature-card: #181818, 16px radius, 28px padding -->
   <section style="border-top: 1px solid #222222; background-color: #0f0f0f;">
     <div class="max-w-[1200px] mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
-      <div class="text-center mb-20 reveal">
+      <div class="text-center mb-20" data-anim="fade-up">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">Como funciona</p>
         <h2 class="section-heading" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           De cero a online,<br/>
@@ -330,14 +330,14 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" data-anim-stagger="fade-up" data-anim-delay="100">
         {[
           { step: '1', title: 'Conversamos', desc: 'Me cuentas de tu negocio, que haces, que necesitas. Sin tecnicismos.' },
           { step: '2', title: 'Creamos', desc: 'Diseno y desarrollo tu sitio a la medida de tu negocio.' },
           { step: '3', title: 'Revisas', desc: 'Te paso el link. Ves como queda. Si algo no te gusta, lo ajustamos.' },
           { step: '4', title: 'Publicamos', desc: 'Tu sitio en linea. Tu chatbot activo. Tu negocio abierto 24/7.' },
         ].map((s, i) => (
-          <div class="reveal" style="background-color: #181818; border: 1px solid #222222; border-radius: 16px; padding: 28px;">
+          <div data-anim="fade-up" style style="background-color: #181818; border: 1px solid #222222; border-radius: 16px; padding: 28px;">
             <span style="color: #0007cd; font-size: 28px; font-weight: 500; line-height: 1; letter-spacing: -0.015em;" class="block mb-4">{s.step}</span>
             <h3 style="font-size: 18px; font-weight: 600; line-height: 1.4; letter-spacing: 0; color: #ffffff;" class="mb-2">{s.title}</h3>
             <p style="font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0; color: #a8a8a8;">{s.desc}</p>
@@ -350,7 +350,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
   <!-- BIG CTA BAND -->
   <section style="border-top: 1px solid #222222; background-color: #000000;">
     <a href="#cta" class="block max-w-[1200px] mx-auto px-6 group text-center" style="padding-top: 80px; padding-bottom: 80px;">
-      <p class="reveal group-hover:opacity-80 transition-opacity" style="font-size: clamp(32px, 4vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.015em; color: #ffffff;">
+      <p data-anim="fade-up" class="group-hover:opacity-80 transition-opacity" style="font-size: clamp(32px, 4vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.015em; color: #ffffff;">
         Listo para <span style="color: #0007cd;">despegar</span>?
       </p>
     </a>
@@ -359,7 +359,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
   <!-- TESTIMONIALS — testimonial-card: #181818, 12px radius, 24px padding -->
   <section style="border-top: 1px solid #222222; background-color: #0f0f0f;">
     <div class="max-w-[1200px] mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
-      <div class="text-center mb-20 reveal">
+      <div class="text-center mb-20" data-anim="fade-up">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">Resultados reales</p>
         <h2 class="section-heading" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Lo que dicen<br/>
@@ -367,13 +367,13 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4" data-anim-stagger="fade-up" data-anim-delay="120">
         {[
           { text: '"En dos dias tenia mi sitio funcionando. El chatbot ya me tomo 3 reservas mientras dormia."', name: 'Carlos M.', role: 'Restaurante' },
           { text: '"Pense que tener pagina web era caro y complicado. Me equivoque. Valio cada peso."', name: 'Maria F.', role: 'Clinica Dental' },
           { text: '"Lo mejor es que yo mismo puedo cambiar los precios y fotos. Ya no dependo de nadie."', name: 'Pedro G.', role: 'Servicios Tecnicos' },
         ].map(t => (
-          <div class="reveal" style="background-color: #181818; border: 1px solid #222222; border-radius: 12px; padding: 24px;">
+          <div data-anim="fade-up" style style="background-color: #181818; border: 1px solid #222222; border-radius: 12px; padding: 24px;">
             <div class="flex gap-1 mb-4">
               {[1,2,3,4,5].map(() => <span style="color: #00d4ff; font-size: 16px;">★</span>)}
             </div>
@@ -391,7 +391,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
   <!-- FAQ -->
   <section id="faq" style="border-top: 1px solid #222222; background-color: #0f0f0f;">
     <div class="max-w-3xl mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
-      <div class="text-center mb-16 reveal">
+      <div class="text-center mb-16" data-anim="fade-up">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">FAQ</p>
         <h2 class="section-heading" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Preguntas<br/>
@@ -407,7 +407,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
         { q: 'Hay pagos mensuales?', a: 'No. Pagas una vez y el sitio es tuyo. El unico costo recurrente opcional es si quieres mantener el chatbot con IA activo ($9/mes).' },
         { q: 'Funciona para mi tipo de negocio?', a: 'Tengo plantillas para restaurantes, clinicas, servicios profesionales, tiendas. Y si tu rubro no esta, lo creamos desde cero para ti.' },
       ].map((item, i) => (
-        <details class="reveal group" style="border-bottom: 1px solid #222222;">
+        <details data-anim="fade-up" class="group" style="border-bottom: 1px solid #222222;">
           <summary class="flex items-center justify-between cursor-pointer list-none py-5 pr-4">
             <h3 style="font-size: 16px; font-weight: 500; line-height: 1.4; letter-spacing: 0; color: #ffffff;">{item.q}</h3>
             <span class="group-open:rotate-45 transition-transform" style="color: #0007cd; font-size: 18px; font-weight: 500;">+</span>
@@ -423,7 +423,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
     <div class="relative max-w-[1200px] mx-auto px-6 text-center" style="padding-top: 96px; padding-bottom: 96px;">
       <!-- secondary glow -->
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none" style="background: radial-gradient(circle at center, rgba(0,7,205,0.15) 0%, rgba(0,7,205,0.04) 40%, transparent 60%);"></div>
-      <div class="reveal max-w-2xl mx-auto relative z-10">
+      <div data-anim="fade-up" class="max-w-2xl mx-auto relative z-10">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-6">Listo?</p>
         <h2 class="section-heading mb-8" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Hablame directo<br/>
@@ -468,8 +468,6 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
     ::-webkit-scrollbar-thumb { background: #333333; border-radius: 8px; }
     details summary::-webkit-details-marker { display: none; }
     details summary { -webkit-appearance: none; }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
     button, a { cursor: pointer; }
 
     /* Responsive hero h1 */
@@ -488,27 +486,138 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
   </style>
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
+    import { animate, createTimeline, stagger, set } from 'animejs';
+
+    // ============ HERO ENTRANCE ============
+    const heroTimeline = createTimeline({
+      defaults: { easing: 'easeOutQuint' },
+    });
+
+    // Badge pill
+    heroTimeline.add('#hero-badge', {
+      opacity: [0, 1],
+      translateY: [-16, 0],
+      duration: 600,
+    }, 0);
+
+    // Hero title
+    heroTimeline.add('#hero-title', {
+      opacity: [0, 1],
+      translateY: [30, 0],
+      duration: 800,
+    }, 200);
+
+    // Hero subtitle
+    heroTimeline.add('#hero-subtitle', {
+      opacity: [0, 1],
+      translateY: [20, 0],
+      duration: 600,
+    }, 600);
+
+    // Hero buttons — staggered
+    heroTimeline.add('#hero-buttons a', {
+      opacity: [0, 1],
+      translateY: [20, 0],
+      duration: 500,
+      delay: stagger(120),
+    }, 900);
+
+    // Terminal grid panes — staggered
+    heroTimeline.add('#terminal-grid > div', {
+      opacity: [0, 1],
+      translateY: [40, 0],
+      duration: 600,
+      delay: stagger(100),
+      easing: 'easeOutExpo',
+    }, 1200);
+
+    // Caption badges
+    heroTimeline.add('#hero-captions span', {
+      opacity: [0, 1],
+      translateY: [10, 0],
+      duration: 400,
+      delay: stagger(80),
+    }, 1800);
+
+    // ============ SCROLL REVEAL ============
+    const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const animType = el.getAttribute('data-anim') || 'fade-up';
+        
+        const paramsMap = {
+          'fade-up': { translateY: [40, 0], opacity: [0, 1], duration: 700, easing: 'easeOutQuart' },
+          'fade-left': { translateX: [-40, 0], opacity: [0, 1], duration: 700, easing: 'easeOutQuart' },
+          'fade-right': { translateX: [40, 0], opacity: [0, 1], duration: 700, easing: 'easeOutQuart' },
+          'scale-in': { scale: [0.92, 1], opacity: [0, 1], duration: 700, easing: 'easeOutQuart' },
+        };
+        
+        animate(el, paramsMap[animType] || paramsMap['fade-up']);
+        scrollObserver.unobserve(el);
       });
     }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Hamburger toggle
+    document.querySelectorAll('[data-anim]').forEach(el => scrollObserver.observe(el));
+
+    // Staggered card groups
+    document.querySelectorAll('[data-anim-stagger]').forEach(container => {
+      const cards = container.querySelectorAll(':scope > *');
+      const animType = container.getAttribute('data-anim-stagger') || 'fade-up';
+      const delayBetween = parseInt(container.getAttribute('data-anim-delay') || '100');
+      
+      const cardObserver = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting) return;
+        
+        const paramsMap = {
+          'fade-up': { translateY: [40, 0], opacity: [0, 1], duration: 600, easing: 'easeOutQuart' },
+          'scale-in': { scale: [0.92, 1], opacity: [0, 1], duration: 600, easing: 'easeOutQuart' },
+        };
+        
+        animate(cards, {
+          ...(paramsMap[animType] || paramsMap['fade-up']),
+          delay: stagger(delayBetween),
+        });
+        
+        cardObserver.unobserve(container);
+      }, { threshold: 0.1 });
+      cardObserver.observe(container);
+    });
+
+    // ============ NAV HAMBURGER ============
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
     if (hamburger && mobileMenu) {
       hamburger.addEventListener('click', () => {
         const isOpen = mobileMenu.style.display === 'block';
-        mobileMenu.style.display = isOpen ? 'none' : 'block';
+        if (isOpen) {
+          animate('#mobile-menu > div', {
+            opacity: [1, 0],
+            translateY: [0, -10],
+            duration: 200,
+            easing: 'easeOutQuad',
+            onfinish: () => { mobileMenu.style.display = 'none'; }
+          });
+        } else {
+          mobileMenu.style.display = 'block';
+          set('#mobile-menu > div', { opacity: 0, translateY: -10 });
+          animate('#mobile-menu > div', {
+            opacity: [0, 1],
+            translateY: [-10, 0],
+            duration: 300,
+            easing: 'easeOutQuad',
+          });
+        }
       });
       document.querySelectorAll('.mobile-link').forEach(link => {
         link.addEventListener('click', () => {
-          mobileMenu.style.display = 'none';
+          animate('#mobile-menu > div', {
+            opacity: [1, 0],
+            translateY: [0, -10],
+            duration: 150,
+            easing: 'easeOutQuad',
+            onfinish: () => { mobileMenu.style.display = 'none'; }
+          });
         });
       });
     }
