@@ -25,15 +25,30 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
         <div style="background-color: #0007cd; border-radius: 8px;" class="w-8 h-8 flex items-center justify-center text-white text-xs font-medium">W</div>
         <span style="color: #ffffff; font-size: 14px; font-weight: 500; letter-spacing: 0;">WebExpress</span>
       </div>
-      <div class="hidden md:flex items-center gap-8" style="color: #888888; font-size: 14px; font-weight: 500; letter-spacing: 0;">
+      <div class="hidden lg:flex items-center gap-8" style="color: #888888; font-size: 14px; font-weight: 500; letter-spacing: 0;">
         <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
         <a href="#planes" class="hover:text-white transition-colors">Planes</a>
         <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
       </div>
       <!-- button-primary: 14px/500, 8px radius, 10px × 18px padding, 40px height -->
-      <a href="#cta" style="background-color: #0007cd; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px;" class="text-white hover:opacity-90 transition-all inline-flex items-center justify-center">
+      <a href="#cta" style="background-color: #0007cd; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px;" class="text-white hover:opacity-90 transition-all inline-flex items-center justify-center hidden sm:inline-flex">
         Quiero mi sitio
       </a>
+      <!-- Hamburger -->
+      <button id="hamburger" style="background: none; border: none; padding: 8px;" class="lg:hidden flex flex-col gap-1.5 items-center justify-center" aria-label="Menu">
+        <span class="ham-line" style="width: 20px; height: 2px; background: #ffffff; display: block;"></span>
+        <span class="ham-line" style="width: 20px; height: 2px; background: #ffffff; display: block;"></span>
+        <span class="ham-line" style="width: 20px; height: 2px; background: #ffffff; display: block;"></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" style="display: none; border-top: 1px solid #222222; background-color: #0f0f0f;" class="lg:hidden">
+      <div class="px-6 py-6 flex flex-col gap-4">
+        <a href="#servicios" class="mobile-link" style="color: #a8a8a8; font-size: 14px; font-weight: 500;">Servicios</a>
+        <a href="#planes" class="mobile-link" style="color: #a8a8a8; font-size: 14px; font-weight: 500;">Planes</a>
+        <a href="#faq" class="mobile-link" style="color: #a8a8a8; font-size: 14px; font-weight: 500;">FAQ</a>
+        <a href="#cta" style="background-color: #0007cd; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px;" class="inline-flex items-center justify-center text-white mt-2">Quiero mi sitio</a>
+      </div>
     </div>
   </nav>
 
@@ -56,7 +71,8 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
         </div>
 
         <!-- display-mega: clamp(40,7vw,72)px 500 1.05 -0.015em -->
-        <h1 style="font-size: clamp(40px, 7vw, 72px); font-weight: 500; line-height: 1.05; letter-spacing: -0.015em; color: #ffffff;" class="mb-6">
+  <!-- Responsive h1 sizes: mobile 36px, tablet 56px, desktop 72px via CSS rule below -->
+        <h1 id="hero-title" style="font-weight: 500; line-height: 1.05; letter-spacing: -0.015em; color: #ffffff;" class="mb-6">
           Tu negocio merece una<br/>
           <span style="color: #0007cd;">presencia digital</span><br/>
           de otro nivel.
@@ -75,7 +91,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
             Ver Planes
           </a>
           <!-- button-outline: transparent, 1px #333 border, 8px -->
-          <a href="#servicios" style="background-color: transparent; border: 1px solid #333333; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px;" class="inline-flex items-center justify-center hover:bg-[#222222] transition-all" style="color: #ffffff;">
+          <a href="#servicios" style="background-color: transparent; border: 1px solid #333333; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px; color: #ffffff;" class="inline-flex items-center justify-center hover:opacity-80 transition-all">
             Que incluye
           </a>
         </div>
@@ -83,7 +99,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
         <!-- terminal-mockup-grid: 16px radius container, #000 bg, 32px padding, 16px gap -->
         <!-- terminal-pane: #222 bg, 12px radius, 20px padding, 13px code -->
         <div class="mt-20 max-w-3xl mx-auto">
-          <div style="background-color: #000000; border: 1px solid #222222; border-radius: 16px; padding: 32px;" class="grid grid-cols-2 gap-4">
+          <div style="background-color: #000000; border: 1px solid #222222; border-radius: 16px;" class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 sm:p-8">
             <div style="background-color: #222222; border-radius: 12px;" class="p-5 text-left">
               <div class="flex gap-1.5 mb-3">
                 <span style="width: 8px; height: 8px; background: #ff4d4d; border-radius: 50%; display: inline-block;"></span>
@@ -153,13 +169,13 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
     <div class="max-w-[1200px] mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
       <div class="text-center mb-20 reveal">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">El problema</p>
-        <h2 style="font-size: clamp(32px, 4vw, 44px); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;" class="max-w-2xl mx-auto">
+        <h2 class="section-heading max-w-2xl mx-auto" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Cuantos clientes has perdido<br/>
           <span style="color: #666666;">por no tener presencia online?</span>
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {[
           { num: '01', title: 'No te encuentran', desc: 'El 86% de las personas busca negocios en Google antes de comprar. Si no estas, no existes.' },
           { num: '02', title: 'Pareces poco profesional', desc: 'Sin sitio web, tu negocio se ve informal. Un cliente que investiga, elige al que tiene web.' },
@@ -190,12 +206,12 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
     <div class="max-w-[1200px] mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
       <div class="text-center mb-20 reveal">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">Todo incluido</p>
-        <h2 style="font-size: clamp(32px, 4vw, 44px); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;" class="max-w-xl mx-auto">
+        <h2 class="section-heading max-w-xl mx-auto" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Tu ecosistema digital<br/>completo.
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {[
           { title: 'Sitio Web Profesional', desc: 'Disenado para tu rubro. Restaurante, clinica, servicios. Responsive, rapido y optimizado para Google.' },
           { title: 'Panel de Edicion', desc: 'Edita textos, fotos y horarios tu mismo. Sin saber de codigo. En 2 minutos tienes los cambios en vivo.' },
@@ -222,13 +238,13 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
     <div class="max-w-[1200px] mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
       <div class="text-center mb-20 reveal">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">Inversion unica</p>
-        <h2 style="font-size: clamp(32px, 4vw, 44px); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;" class="max-w-2xl mx-auto">
+        <h2 class="section-heading max-w-2xl mx-auto" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Precios claros,<br/>
           <span style="color: #0007cd;">sin sorpresas.</span>
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
         <div style="background-color: #181818; border: 1px solid #222222; border-radius: 16px; padding: 28px;">
           <div class="flex items-center justify-between mb-6">
             <h3 style="font-size: 16px; font-weight: 600; line-height: 1.4; letter-spacing: 0; color: #ffffff;">Web Basica</h3>
@@ -236,7 +252,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
             <span style="background-color: #222222; color: #888888; border-radius: 9999px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase;">Para empezar</span>
           </div>
           <div class="mb-6">
-            <span style="font-size: 40px; font-weight: 500; line-height: 1; letter-spacing: -0.015em; color: #ffffff;">$160</span>
+            <span class="price-tag" style="font-weight: 500; line-height: 1; letter-spacing: -0.015em; color: #ffffff;">$160</span>
             <span style="color: #666666; font-size: 13px; font-weight: 400; line-height: 1.4;"> USD</span>
             <p style="font-size: 13px; font-weight: 400; line-height: 1.4; color: #666666; letter-spacing: 0;" class="mt-2">Pago unico. El sitio es tuyo.</p>
           </div>
@@ -257,7 +273,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
             ))}
           </ul>
           <!-- button-secondary-dark: #222 bg, 8px radius, 40px, 10px×18px -->
-          <a href="#cta" style="background-color: #222222; border: 1px solid #333333; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px;" class="flex items-center justify-center w-full hover:bg-[#2a2a2a] transition-all" style="color: #ffffff;">
+          <a href="#cta" style="background-color: #222222; border: 1px solid #333333; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px;" class="flex items-center justify-center w-full hover:opacity-80 transition-all" style="color: #ffffff;">
             Elegir Basica
           </a>
         </div>
@@ -268,7 +284,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
             <span style="background-color: rgba(255,255,255,0.15); color: #ffffff; border-radius: 9999px; padding: 4px 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase;">Mas elegido</span>
           </div>
           <div class="mb-6">
-            <span style="font-size: 40px; font-weight: 500; line-height: 1; letter-spacing: -0.015em; color: #ffffff;">$259</span>
+            <span class="price-tag" style="font-weight: 500; line-height: 1; letter-spacing: -0.015em; color: #ffffff;">$259</span>
             <span style="color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 400; line-height: 1.4;"> USD</span>
             <p style="font-size: 13px; font-weight: 400; line-height: 1.4; color: rgba(255,255,255,0.6); letter-spacing: 0;" class="mt-2">Pago unico. Todo incluido.</p>
           </div>
@@ -291,7 +307,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
             ))}
           </ul>
           <!-- button-secondary-dark sobre azul -->
-          <a href="#cta" style="background-color: #222222; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px;" class="flex items-center justify-center w-full hover:bg-[#2a2a2a] transition-all" style="color: #ffffff;">
+          <a href="#cta" style="background-color: #222222; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px;" class="flex items-center justify-center w-full hover:opacity-80 transition-all" style="color: #ffffff;">
             Elegir Profesional
           </a>
         </div>
@@ -308,13 +324,13 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
     <div class="max-w-[1200px] mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
       <div class="text-center mb-20 reveal">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">Como funciona</p>
-        <h2 style="font-size: clamp(32px, 4vw, 44px); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
+        <h2 class="section-heading" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           De cero a online<br/>
           <span style="color: #0007cd;">en 15 minutos.</span>
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
           { step: '1', title: 'Conversamos', desc: 'Me cuentas de tu negocio, que haces, que necesitas. Sin tecnicismos.' },
           { step: '2', title: 'Creamos', desc: 'Con IA genero tu sitio con el contenido perfecto para tu negocio.' },
@@ -345,13 +361,13 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
     <div class="max-w-[1200px] mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
       <div class="text-center mb-20 reveal">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">Resultados reales</p>
-        <h2 style="font-size: clamp(32px, 4vw, 44px); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
+        <h2 class="section-heading" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Lo que dicen<br/>
           <span style="color: #0007cd;">nuestros clientes.</span>
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {[
           { text: '"En dos dias tenia mi sitio funcionando. El chatbot ya me tomo 3 reservas mientras dormia."', name: 'Carlos M.', role: 'Restaurante' },
           { text: '"Pense que tener pagina web era caro y complicado. Me equivoque. Valio cada peso."', name: 'Maria F.', role: 'Clinica Dental' },
@@ -377,7 +393,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
     <div class="max-w-3xl mx-auto px-6" style="padding-top: 96px; padding-bottom: 96px;">
       <div class="text-center mb-16 reveal">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-4">FAQ</p>
-        <h2 style="font-size: clamp(32px, 4vw, 44px); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
+        <h2 class="section-heading" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Preguntas<br/>
           <span style="color: #0007cd;">frecuentes.</span>
         </h2>
@@ -409,7 +425,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none" style="background: radial-gradient(circle at center, rgba(0,7,205,0.15) 0%, rgba(0,7,205,0.04) 40%, transparent 60%);"></div>
       <div class="reveal max-w-2xl mx-auto relative z-10">
         <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.88px; line-height: 1.4; text-transform: uppercase; color: #888888;" class="mb-6">Listo?</p>
-        <h2 style="font-size: clamp(32px, 4vw, 44px); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;" class="mb-8">
+        <h2 class="section-heading mb-8" style="font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #ffffff;">
           Hablame directo<br/>
           <span style="color: #0007cd;">por WhatsApp.</span>
         </h2>
@@ -424,7 +440,7 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
           </a>
           <!-- button-outline -->
           <a href="mailto:hola@webexpress.cl"
-            style="background-color: transparent; border: 1px solid #333333; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px;" class="inline-flex items-center justify-center hover:bg-[#222222] transition-all" style="color: #ffffff;">
+            style="background-color: transparent; border: 1px solid #333333; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0; height: 40px; padding: 10px 18px;" class="inline-flex items-center justify-center hover:opacity-80 transition-all" style="color: #ffffff;">
             hola@webexpress.cl
           </a>
         </div>
@@ -455,6 +471,20 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     button, a { cursor: pointer; }
+
+    /* Responsive hero h1 */
+    #hero-title { font-size: 36px; }
+    @media (min-width: 640px) { #hero-title { font-size: 56px; } }
+    @media (min-width: 1024px) { #hero-title { font-size: 72px; } }
+
+    /* Responsive section headings (display-lg) */
+    .section-heading { font-size: 28px; }
+    @media (min-width: 640px) { .section-heading { font-size: 36px; } }
+    @media (min-width: 1024px) { .section-heading { font-size: 44px; } }
+
+    /* Responsive price tags */
+    .price-tag { font-size: 32px; }
+    @media (min-width: 640px) { .price-tag { font-size: 40px; } }
   </style>
 
   <script>
@@ -467,6 +497,21 @@ import BeamsBackground from '../components/BeamsBackground.jsx';
       });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.style.display === 'block';
+        mobileMenu.style.display = isOpen ? 'none' : 'block';
+      });
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.style.display = 'none';
+        });
+      });
+    }
   </script>
 </body>
 </html>
