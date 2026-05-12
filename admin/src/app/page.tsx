@@ -13,8 +13,20 @@ interface Project {
   created_at: string;
 }
 
+const STATIC_CLIENTS = [
+  {
+    id: 'fadez-static',
+    name: 'FADE STUDIO',
+    slug: 'fadez',
+    rubro: 'barberia',
+    status: 'active',
+    url: 'https://webexpresschile.github.io/fadez/',
+    created_at: new Date().toISOString(),
+  }
+];
+
 export default function AdminPage() {
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<Project[]>(STATIC_CLIENTS as Project[]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [generating, setGenerating] = useState(false);
@@ -180,15 +192,24 @@ export default function AdminPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5">
+                    {p.slug && STATIC_CLIENTS.some(c => c.slug === p.slug) && (
+                      <a href={`/clients/${p.slug}`}
+                        className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors">
+                        <Palette className="w-4 h-4" />
+                        Editar
+                      </a>
+                    )}
                     {p.url ? (
                       <a href={p.url} target="_blank"
                         className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-sky-600 hover:bg-sky-50 rounded-lg transition-colors">
                         <ExternalLink className="w-4 h-4" />
-                        Ver sitio
+                        Ver
                       </a>
                     ) : (
                       <span className="text-xs text-amber-600">Pendiente</span>
                     )}
+                  </div>
                   </div>
                 </div>
               ))}
